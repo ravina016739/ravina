@@ -1,0 +1,7546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+    }
+    .topics {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .topic-btn {
+      margin: 10px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .topic-btn:hover {
+      background-color: #0056b3;
+    }
+    .content {
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Name : Gorav</h1>
+    <h1> Roll number : 4006/23</h1>
+    <h1 >Course : BCA 3nd Sem.</h1>
+    <h1>Submitted To : Mr. Chetan Gupta</h1>
+  <div class="topics">
+    <button class="topic-btn" onclick="showContent('2D Array')">2D Array</button>
+    <button class="topic-btn" onclick="showContent('Basic Programming Constructs')">Graphs</button>
+    <button class="topic-btn" onclick="showContent('Data Conversion')">Linked List</button>
+    <button class="topic-btn" onclick="showContent('File Handling')">Queues</button>
+    <button class="topic-btn" onclick="showContent('Functions')">Recursion</button>
+    <button class="topic-btn" onclick="showContent('Inheritance')">Search</button>
+    <button class="topic-btn" onclick="showContent('Object Oriented Programming')">Sorting</button>
+    <button class="topic-btn" onclick="showContent('Operator Overloading')">Stacks</button>
+    <button class="topic-btn" onclick="showContent('Single Dimension Array')">Single Dimension Array</button>
+    <button class="topic-btn" onclick="showContent('Strings')">Strings</button>
+    <button class="topic-btn" onclick="showContent('Virtual Functions')">Trees</button>
+  </div>
+  <div class="content" id="content">
+  </div>
+</div>
+
+<script>
+  function showContent(topic) {
+   
+    var contentMap = {
+        "2D Array": `<h1>2D Array</h1>  
+      <div class="code">
+        <div>
+          <h2 name="code1"> 1. Enter the matrix of rows and columns entered by the user and print in matrix format</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+            #include&lt;iostream.h>
+                #include&lt;conio.h>
+                
+                //main definition//
+                void main()
+                {
+                    int a[3][3];
+                    clrscr();
+                    cout&lt;&lt;"Enter the Element of Array : ";
+                    for(int i=0;i&lt;3;i++)
+                    {
+                        for(int j=0;j&lt;3;j++)
+                        {
+                            cin>>a[i][j];
+                        }
+                    }
+                //print the matrix//
+                    cout&lt;&lt;"3x3 Matrix : "&lt;&lt;endl;
+                    for(i=0;i&lt;3;i++)
+                    {
+                        cout&lt;&lt;endl;
+                        for(int j=0;j&lt;3;j++)
+                        {
+                            cout&lt;&lt;a[i][j]&lt;&lt;" ";
+                        }
+                    }
+                    getch();
+                }
+          </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>
+            Enter the elements of Array: 3 4 5 6 7 7 8 9 6
+            3X3 Matrix is: 3 4 5
+            6 7 7
+            8 9 6
+          </pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code2">2.program to add two matrices</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>#include&lt;iostream.h>
+            #include&lt;conio.h>
+            
+            //main definition//
+            void main()
+            {
+              int r,c,a[100][100],b[100][100],sum[100][100],i,j;
+              clrscr();
+              cout&lt;&lt;"Enter number of rows :"&lt;&lt;endl;
+              cin>>r;
+              cout&lt;&lt;"Enter number of columns :"&lt;&lt;endl;
+              cin>>c;
+              cout&lt;&lt;endl&lt;&lt;"Enter elements of 1st matrix : "&lt;&lt;endl;
+              //storing elements of first matrix by user//
+              for(i=0;i&lt;r;i++)
+                for(j=0;j&lt;c;j++)
+                {
+                  cout&lt;&lt;"Enter element a"&lt;&lt;i+1&lt;&lt;j+1&lt;&lt;":";
+                  cin>>a[i][j];
+                }
+              //storing elements of 2nd matrix by user//
+              cout&lt;&lt;endl&lt;&lt;"Enter elements of 2nd matrix: "&lt;&lt;endl;
+              for(i=0;&lt;r;i++)
+                for(j=0;j&lt;c;j++)
+                {
+                  cout&lt;&lt;"enter element b"&lt;&lt;i+1&lt;&lt;j+1&lt;&lt;":";
+                  cin>>b[i][j];
+                }
+              //adding two matrices//
+              for(i=0;i&lt;r;i++)
+                for(j=0;j&lt;c;j++)
+                sum[i][j]=a[i][j]+b[i][j];
+              //displaying the resultand sum matrix//
+              cout&lt;&lt;endl&lt;&lt;"Sum of two matrix is : "&lt;&lt;endl;
+              for(i=0;i&lt;r;i++)
+                for(j=0;j&lt;c;j++)
+                {
+                  cout&lt;&lt;sum[i][j]&lt;&lt;" ";
+                  if(j==c-1)
+                    cout&lt;&lt;endl;
+                }
+              getch();
+            }
+            </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>Enter number of rows : 3
+            Enter number of columns : 2
+            
+            Enter elements of 1st matrix :
+            Enter element a11:3
+            Enter element a12:4
+            Enter element a21:5
+            Enter element a22:6
+            Enter element a31:7
+            Enter element a32:8
+            
+            Enter elements of 2nd matrix :
+            Enter element b11:3
+            Enter element b12:4
+            Enter element b21:5
+            Enter element b22:6
+            Enter element b31:7
+            Enter element b32:8
+            
+            Sum of two Matrix is:
+            7 9
+            11 13
+            15 17</pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code3">3. Program to Multiply Two Matrices</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>#include&lt;iostream>
+            using namespace std;
+            
+            int main()
+            {
+              int a[10][10],b[10][10],c[10][10],i,j,k,r1,c1,r2,c2;
+              cout&lt;&lt;"\nEnter number of rows and columns of 1st matrix";
+              cin>>r1>>c1;
+              cout&lt;&lt;"\nEnter number of rows and columns of 2nd matrix";
+              cin>>r2>>c2;
+              if(c1==r2)
+              {
+                cout&lt;&lt;"\nEnter elements of 1st matrix";
+                for(i=0;i&lt;r1;i++)
+                  for(j=0;j&lt;c1;j++)
+                    cin>>a[i][j];
+                cout&lt;&lt;"\nEnter elements of 2nd matrix";
+                for(i=0;i&lt;r2;i++)
+                  for(j=0;j&lt;c2;j++)
+                    cin>>b[i][j];
+              //calculate product of two matrix//
+              for(i=0;i&lt;r1;i++)
+              {
+                for(j=0;j&lt;c2;j++)
+                {
+                c[i][j]=0;
+                  for(k=0;k&lt;c1;k++)
+                    c[i][j]=c[i][j]+a[i][k]*b[k][j];
+                }
+              }
+              cout&lt;&lt;"Product of two matrix: "&lt;&lt;endl;
+              for(i=0;i&lt;r1;i++)
+              {
+                for(j=0;j&lt;c2;j++)
+                  cout&lt;&lt;"\t"&lt;&lt;c[i][j];
+                cout&lt;&lt;"\n";
+              }
+            }
+            else
+              cout&lt;&lt;"\n Means Multipliction is not possible";
+              return 0;
+            }
+            
+            
+            </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>
+            Enter number of rows and columns of 1st matrix2 2
+
+            Enter number of rows and columns of 2nd matrix2 3
+            
+            Enter elements of 1st matrix1 2 3 4
+            
+            Enter elements of 2nd matrix1 2 3 4 4 5
+            Product of two matrix:
+                    9       10      13
+                    19      22      29
+          </pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code4">4. subtractin of 2 matrix.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+            #include&lt;iostream>
+              using namespace std;
+              
+              int main()
+              {
+                int a[10][10],b[10][10],d[10][10],r,c,i,j;
+                cout&lt;&lt;"\nEnter rows and columns of 2 matrices";
+                cin>>r>>c;
+                cout&lt;&lt;"\nEnter element of first matrix";
+                for(i=0;i&lt;r;i++)
+                  for(j=0;j&lt;c;j++)
+                    cin>>a[i][j];
+                cout&lt;&lt;"\nEnter elements of second matrix";
+                for(i=0;i&lt;r;i++)
+                  for(j=0;j&lt;c;j++)
+                    cin>>b[i][j];
+                //subtraction of two matrices
+                for(i=0;i&lt;r;i++)
+                  for(j=0;j&lt;c;j++)
+                    d[i][j]=a[i][j]-b[i][j];
+                cout&lt;&lt;"\nSubtraction of two matrices is \n";
+                for(i=0;i&lt;r;i++)
+                {
+                  for(j=0;j&lt;c;j++)
+                    cout&lt;&lt;"\t"&lt;&lt;d[i][j];
+                    cout&lt;&lt;endl;
+                  }
+                  return 0;
+              }
+            </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>Enter rows and columns of 2 matrices2 2
+
+            Enter element of first matrix2 3 4 5
+            
+            Enter elements of second matrix5 6 7 8
+            
+            Subtraction of two matrices is
+                    -3      -3
+                    -3      -3</pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code5">5. Program to determine whether two matrices are equal</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>#include &lt;iostream>
+using namespace std;
+
+const int MAX = 100;
+
+		// Function to check if two matrices are equal //
+int areMatricesEqual(int mat1[][MAX], int mat2[][MAX], int rows, int cols) {
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            if (mat1[i][j] != mat2[i][j]) {
+                return 0;
+            }
+        }
+    }
+    return 1;
+}
+
+int main() {
+    int rows, cols;
+    cout << "Enter the number of rows: ";
+    cin >> rows;
+    cout << "Enter the number of columns: ";
+    cin >> cols;
+
+    int mat1[MAX][MAX], mat2[MAX][MAX];
+
+    cout << "Enter elements of matrix 1:\n";
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            cin >> mat1[i][j];
+        }
+    }
+
+    cout << "Enter elements of matrix 2:\n";
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            cin >> mat2[i][j];
+        }
+    }
+
+    if (areMatricesEqual(mat1, mat2, rows, cols)) {
+        cout << "Matrices are equal.\n";
+    } else {
+        cout << "Matrices are not equal.\n";
+    }
+
+    return 0;
+}</pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>Enter the number of rows: 2
+Enter the number of columns: 2
+Enter elements of matrix 1:
+1 2 3 4
+Enter elements of matrix 2:
+1 2 3 4
+Matrices are equal.
+
+--------------------------------
+Process exited after 14.51 seconds with return value 0
+Press any key to continue . . .</pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code6">6. Program to display the lower triangular matrix</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>#include&lt;iostream>
+            using namespace std;
+            int main(){
+            int x,y,i,j,c=0;
+            cout&lt;&lt;"Enter the rows and columns For Matrix: ";
+            cin>>x>>y;
+            if(x==y){
+            int mata[10][10];
+            cout&lt;&lt;"Enter the elements of matrix : "&lt;&lt; endl;
+            for(i=0;i< x;i++){
+            
+            for(j=0;j< ;j++){
+            cin>>mata[i][j];}
+            }
+            cout&lt;&lt;"Lower triangular matrix of the given matrix : "&lt;&lt; endl;
+            for(i=0;i< x;i++){
+            for(j=0;j< y;j++){
+            if (i==j){
+            c=1;
+            cout&lt;&lt;"  "&lt;&lt; mata[i][j];}
+            else if (c==0){
+            cout&lt;&lt;"  "&lt;&lt; mata[i][j];}
+            else{
+            cout&lt;&lt;"  "&lt;&lt; 0;}}
+            cout&lt;&lt; endl;
+            c=0;}}
+            else{
+            cout&lt;&lt;"Not a square matrix";}
+            return 0;
+          }</pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>Enter the rows and columns For Matrix: 3 3
+            Enter the elements of matrix :
+            3 3 3
+            4 4 4
+            5 6 7
+            Lower triangular matrix of the given matrix :
+              3  0  0
+              4  4  0
+              5  6  7</pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code7">7. Program to display the upper triangular matrix</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>#include&lt;iostream>
+            using namespace std;
+            int main(){
+            int x,y,i,j,c=0;
+            cout&lt;&lt;"Enter the rows and columns For Matrix: ";
+            cin>>x>>y;
+            if(x==y){
+            int mata[10][10];
+            cout&lt;&lt;"Enter the elements of matrix : "&lt;&lt;endl;
+            for(i=0;i< x;i++){
+            for(j=0;j< y;j++){
+            cin>>mata[i][j];}
+            }
+            cout&lt;&lt;"Upper triangular matrix : "&lt;&lt;endl;
+            for(i=0;i< x;i++){
+            for(j=0;j< y;j++){
+            if (i==j){
+            c=1;
+            cout&lt;&lt;"  "&lt;&lt;mata[i][j];}
+            else if (c==1){
+            cout&lt;&lt;"  "&lt;&lt;mata[i][j];}
+            else{
+            cout&lt;&lt;"  "&lt;&lt;0;}}
+            cout&lt;&lt;endl;
+            c=0;}}
+            else{
+            cout&lt;&lt;"Not a square matrix";}
+            return 0;}
+            
+            output:
+            </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>Enter the rows and columns For Matrix: 3 3
+            Enter the elements of matrix :
+            3 4 5
+            4 3 2
+            4 5 6
+            Upper triangular matrix :
+              3  4  5
+              0  3  2
+              0  0  6</pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code8">8.frequency of even and odd elements of matrix</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+            #include &lt;iostream>
+              using namespace std;
+              
+              int main() 
+              {
+                
+                  int matrix[3][3];
+                  int oddCount = 0, evenCount = 0;
+              
+                  cout &lt;&lt; "Enter 9 elements of the 3x3 matrix:" &lt;&lt; endl;
+              
+                  // Input elements of the matrix
+                  for (int i = 0; i &lt; 3; ++i) {
+                      for (int j = 0; j &lt; 3; ++j) {
+                          cin >> matrix[i][j];
+                      }
+                  }
+              
+                  // Counting even and odd numbers
+                  for (int i = 0; i &lt; 3; ++i) {
+                      for (int j = 0; j &lt; 3; ++j) {
+                          if (matrix[i][j] % 2 == 0)
+                              evenCount++;
+                          else
+                              oddCount++;
+                      }
+                  }
+              
+                  // Displaying the results
+                  cout &lt;&lt; "Frequency of even numbers: " &lt;&lt; evenCount &lt;&lt; endl;
+                  cout &lt;&lt; "Frequency of odd numbers: " &lt;&lt; oddCount &lt;&lt; endl;
+              
+                  return 0;
+              }
+       </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>
+            Enter 9 elements of the 3x3 matrix:
+2 3 4 5 6 7 4 3 2
+Frequency of even numbers: 5
+Frequency of odd numbers: 4
+          </pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code9">9.sum of rows and columns of a matrix</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>#include&lt;iostream>
+            using namespace std;
+            
+            int main()
+            {
+              int a[10][10],i,j,r,c;
+              cout&lt;&lt;"\nEnter rows and columns of a matrix";
+              cin>>r>>c;
+              cout&lt;&lt;"\nEnter elements";
+              for(i=0;i&lt;r;i++)
+                for(j=0;j&lt;c;j++)
+                  cin>>a[i][j];
+              for(i=0;i&lt;r;i++)
+              {
+                a[i][c]=0;
+                for(j=0;j&lt;c;j++)
+                  a[i][c]=a[i][c]+a[i][j];
+              }
+              for(j=0;j&lt;c;j++) {
+                a[r][j]=0;
+                for(i=0;i&lt;r;i++)
+                  a[r][j]=a[r][j]+a[i][j];
+                }
+              a[r][c]=0;
+              for(i=0;i&lt;r;i++)
+                a[r][c]=a[r][c]+a[i][c];
+              for(i=0;i&lt;r+1;i++)
+              {
+                for(j=0;j&lt;c+1;j++)
+                  cout&lt;&lt;"\t"&lt;&lt;a[i][j];
+                  cout&lt;&lt;endl;
+              }
+              return 0;
+            }
+            </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>Enter rows and columns of a matrix2 2
+
+            Enter elements2 3 4 5
+                    2       3       5
+                    4       5       9
+                    6       8       14</pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code10">10. Program to determine whether a given matrix is an identity matrix</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>#include&lt;iostream>
+            using namespace std;
+            int main(){
+            int x,y,i,j,c=0;
+            cout&lt;&lt;"Enter the rows and columns For Matrix: ";
+            cin>>x>>y;
+            if(x==y){
+            int mat[10][10];
+            cout&lt;&lt;"Enter the elements of matrix : "&lt;&lt;endl;
+            for(i=0;i< x;i++){
+            for(j=0;j< y;j++){
+            cin>>mat[i][j];}
+            }
+            for(i=0;i< x;i++){
+            for(j=0;j< y;j++){
+            if(i==j){
+            if(mat[i][j]!=1){
+            c=1;}
+            }
+            }}
+            if(c==1){
+            cout&lt;&lt;"Not an identity matrix ";}
+            else{
+            cout&lt;&lt;"Its an Identity matrix ";} }
+            else{
+            cout&lt;&lt;"Matrix should be square ";}
+            return 0;}
+            
+           
+            </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>Enter the rows and columns For Matrix: 3 3
+            Enter the elements of matrix :
+            1 0 0
+            0 1 0
+            0 0 1
+            Its an Identity matrix</pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code11">11. Program to Transpose matrix</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>#include&lt;iostream>
+            using namespace std;
+            
+            int main()
+            {
+              int a[10][10],i,j,r,c;
+              cout&lt;&lt;"Enter the no of rows: "&lt;&lt;endl;
+              cin>>r;
+              cout&lt;&lt;"enter the no of colums: "&lt;&lt;endl;
+              cin>>c;
+              cout&lt;&lt;"enter the elements of matrix";
+               for(i=0;i&lt;r;i++)
+               {
+                for(j=0;j&lt;c;j++)
+                {
+                  cin>>a[i][j];
+                }
+               }
+               cout&lt;&lt;"Matrix is : "&lt;&lt;endl;
+               for(i=0;i&lt;r;i++)
+               {
+                for(j=0;j&lt;c;j++)
+                {
+                  cout&lt;&lt;"\t"&lt;&lt;a[i][j];
+                }
+                cout&lt;&lt;"\n";
+               }
+               cout&lt;&lt;"\nTranspose of Matrix :"&lt;&lt;endl;
+               for(i=0;i&lt;c;i++)
+               {
+                for(j=0;
+                j&lt;r;j++)
+                {
+                  cout&lt;&lt;"\t"&lt;&lt;a[j][i];
+                }
+               cout&lt;&lt;"\n";
+               }
+               return 0;
+            }
+            </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>Enter the no of rows:
+            2
+            enter the no of colums:
+            2
+            enter the elements of matrix3 4 5 6
+            Matrix is :
+                    3       4
+                    5       6
+            
+            Transpose of Matrix :
+                    3       5
+                    4       6</pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code12">12. Program to determine whether a given matrix is a sparse matrix</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>#include&lt;iostream>
+            using namespace std;
+            int main(){
+            int x,y,i,j,c=0;
+            cout<<"Enter the rows and columns For Matrix: ";
+            cin>>x>>y;
+            int mat[10][10];
+            cout<<"Enter the elements of matrix : "<< endl;
+            for(i=0;i< x;i++){
+            for(j=0;j< y;j++){
+            cin>>mat[i][j];}
+            }
+            for(i=0;i< x;i++){
+            for(j=0;j< y;j++){
+            if(mat[i][j]==0){
+            c++;}}}
+            if(c>((x*y)/2)){
+            cout<<"Sparse Matrix ";}
+            else{
+            cout<<"Not a Sparse Matrix ";}
+            return 0;}
+          </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre> Enter the rows and columns For Matrix: 3 3
+            Enter the elements of matrix :
+            0 0 2
+            2 2 0
+            0 0 0
+            Sparse Matrix</pre>
+        </div>
+      </div>`,
+
+        "Basic Programming Constructs": `
+        <h1>Graphs</h1>
+        <div class="code">
+        <div>
+          <h2 name="code1">1. ENTER THE VERTICES AND EDGES AND REPRESENT IN ADJACENCY MATRIX AND PRINT IT.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+		#include <stdio.h>
+
+#define MAX 100
+
+void createAdjMatrix(int adjMatrix[MAX][MAX], int vertices, int edges)
+{
+    int i, src, dest;
+
+    // Initialize the matrix to 0
+    for (i = 0; i < vertices; i++)
+    {
+        for (int j = 0; j < vertices; j++)
+        {
+            adjMatrix[i][j] = 0;
+        }
+    }
+
+    printf("Enter the edges (source and destination vertices) one by one:\n");
+    for (i = 0; i < edges; i++)
+    {
+        printf("Edge %d - Enter source and destination: ", i + 1);
+        scanf("%d %d", &src, &dest);
+
+        // For an undirected graph, mark both (src, dest) and (dest, src) as 1
+        adjMatrix[src][dest] = 1;
+        adjMatrix[dest][src] = 1;
+    }
+}
+
+void printAdjMatrix(int adjMatrix[MAX][MAX], int vertices)
+{
+    printf("\nAdjacency Matrix:\n");
+    for (int i = 0; i < vertices; i++)
+    {
+        for (int j = 0; j < vertices; j++)
+        {
+            printf("%d ", adjMatrix[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+int main()
+{
+    int vertices, edges;
+    int adjMatrix[MAX][MAX];
+
+    printf("Enter the number of vertices: ");
+    scanf("%d", &vertices);
+
+    printf("Enter the number of edges: ");
+    scanf("%d", &edges);
+
+    createAdjMatrix(adjMatrix, vertices, edges);
+    printAdjMatrix(adjMatrix, vertices);
+
+    return 0;
+}
+	</div>
+	<div class="code">
+        <div>
+          <h2 name="code2">2. CREATE THE GRAPH AS A ADJACENCY LIST WITH OPERATIONS SUCH AS INSERTION, DELETION</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+	#include <stdio.h>
+#include <stdlib.h>
+
+#define MAX 100
+
+// Structure for an adjacency list node
+struct Node
+{
+    int dest;
+    struct Node *next;
+};
+
+// Structure for an adjacency list
+struct AdjList
+{
+    struct Node *head;
+};
+
+// Structure for the graph
+struct Graph
+{
+    int vertices;
+    struct AdjList *array;
+};
+
+// Function to create a new adjacency list node
+struct Node *createNode(int dest)
+{
+    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
+    newNode->dest = dest;
+    newNode->next = NULL;
+    return newNode;
+}
+
+// Function to create a graph with a given number of vertices
+struct Graph *createGraph(int vertices)
+{
+    struct Graph *graph = (struct Graph *)malloc(sizeof(struct Graph));
+    graph->vertices = vertices;
+    graph->array = (struct AdjList *)malloc(vertices * sizeof(struct AdjList));
+
+    for (int i = 0; i < vertices; i++)
+        graph->array[i].head = NULL;
+
+    return graph;
+}
+
+// Function to insert an edge into the graph
+void insertEdge(struct Graph *graph, int src, int dest)
+{
+    // Add an edge from src to dest
+    struct Node *newNode = createNode(dest);
+    newNode->next = graph->array[src].head;
+    graph->array[src].head = newNode;
+
+    // For undirected graph, add an edge from dest to src as well
+    newNode = createNode(src);
+    newNode->next = graph->array[dest].head;
+    graph->array[dest].head = newNode;
+}
+
+// Function to delete an edge from the graph
+void deleteEdge(struct Graph *graph, int src, int dest)
+{
+    struct Node *temp = graph->array[src].head, *prev = NULL;
+
+    // If the head node itself holds the destination to delete
+    if (temp != NULL && temp->dest == dest)
+    {
+        graph->array[src].head = temp->next;
+        free(temp);
+    }
+    else
+    {
+        // Search for the node to be deleted
+        while (temp != NULL && temp->dest != dest)
+        {
+            prev = temp;
+            temp = temp->next;
+        }
+        // Unlink the node from the linked list
+        if (temp != NULL)
+        {
+            prev->next = temp->next;
+            free(temp);
+        }
+    }
+
+    // Repeat for the undirected edge in the opposite direction
+    temp = graph->array[dest].head;
+    prev = NULL;
+    if (temp != NULL && temp->dest == src)
+    {
+        graph->array[dest].head = temp->next;
+        free(temp);
+    }
+    else
+    {
+        while (temp != NULL && temp->dest != src)
+        {
+            prev = temp;
+            temp = temp->next;
+        }
+        if (temp != NULL)
+        {
+            prev->next = temp->next;
+            free(temp);
+        }
+    }
+}
+
+// Function to print the adjacency list of the graph
+void printGraph(struct Graph *graph)
+{
+    for (int v = 0; v < graph->vertices; v++)
+    {
+        struct Node *temp = graph->array[v].head;
+        printf("Vertex %d: ", v);
+        while (temp)
+        {
+            printf("-> %d ", temp->dest);
+            temp = temp->next;
+        }
+        printf("\n");
+    }
+}
+
+// Function to free the memory allocated to the graph
+void freeGraph(struct Graph *graph)
+{
+    for (int v = 0; v < graph->vertices; v++)
+    {
+        struct Node *temp = graph->array[v].head;
+        while (temp != NULL)
+        {
+            struct Node *next = temp->next;
+            free(temp);
+            temp = next;
+        }
+    }
+    free(graph->array);
+    free(graph);
+}
+
+int main()
+{
+    int vertices, edges, src, dest, choice;
+
+    printf("Enter the number of vertices: ");
+    scanf("%d", &vertices);
+
+    struct Graph *graph = createGraph(vertices);
+
+    do
+    {
+        printf("\nMenu:\n");
+        printf("1. Insert Edge\n");
+        printf("2. Delete Edge\n");
+        printf("3. Display Graph\n");
+        printf("4. Exit\n");
+        printf("Choose an option: ");
+        scanf("%d", &choice);
+
+        switch (choice)
+        {
+        case 1:
+            printf("Enter source and destination of the edge to insert: ");
+            scanf("%d %d", &src, &dest);
+            insertEdge(graph, src, dest);
+            printf("Edge inserted successfully.\n");
+            break;
+        case 2:
+            printf("Enter source and destination of the edge to delete: ");
+            scanf("%d %d", &src, &dest);
+            deleteEdge(graph, src, dest);
+            printf("Edge deleted successfully.\n");
+            break;
+        case 3:
+            printf("Adjacency List Representation of the Graph:\n");
+            printGraph(graph);
+            break;
+        case 4:
+            printf("Exiting program.\n");
+            break;
+        default:
+            printf("Invalid choice! Please try again.\n");
+        }
+    } while (choice != 4);
+
+    freeGraph(graph);
+    return 0;
+}
+	</pre>
+	</div>
+	
+	</div>
+	<div class="code">
+        <div>
+          <h2 name="code3">3.TRAVERSE THE ADJACENT MATRIX WITH DEPTH FIRST SEARCH</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+	#include <stdio.h>
+
+#define MAX 100
+
+int adjMatrix[MAX][MAX]; // Adjacency matrix
+int visited[MAX];        // Visited array to keep track of visited nodes
+int vertices;
+
+// Function to perform DFS traversal
+void DFS(int v)
+{
+    printf("%d ", v); // Visit the current vertex
+    visited[v] = 1;   // Mark the current vertex as visited
+
+    for (int i = 0; i < vertices; i++)
+    {
+        // If there is an edge from v to i and i is not visited, do DFS on i
+        if (adjMatrix[v][i] == 1 && !visited[i])
+        {
+            DFS(i);
+        }
+    }
+}
+
+// Function to create the adjacency matrix
+void createAdjMatrix(int edges)
+{
+    int src, dest;
+
+    // Initialize the matrix to 0
+    for (int i = 0; i < vertices; i++)
+    {
+        for (int j = 0; j < vertices; j++)
+        {
+            adjMatrix[i][j] = 0;
+        }
+    }
+
+    printf("Enter the edges (source and destination vertices) one by one:\n");
+    for (int i = 0; i < edges; i++)
+    {
+        printf("Edge %d - Enter source and destination: ", i + 1);
+        scanf("%d %d", &src, &dest);
+
+        // For an undirected graph, mark both (src, dest) and (dest, src) as 1
+        adjMatrix[src][dest] = 1;
+        adjMatrix[dest][src] = 1;
+    }
+}
+
+// Function to initialize the visited array
+void initializeVisited()
+{
+    for (int i = 0; i < vertices; i++)
+    {
+        visited[i] = 0;
+    }
+}
+
+int main()
+{
+    int edges, startVertex;
+
+    printf("Enter the number of vertices: ");
+    scanf("%d", &vertices);
+
+    printf("Enter the number of edges: ");
+    scanf("%d", &edges);
+
+    createAdjMatrix(edges);
+
+    printf("Enter the starting vertex for DFS: ");
+    scanf("%d", &startVertex);
+
+    initializeVisited(); // Initialize all vertices as unvisited
+
+    printf("DFS Traversal starting from vertex %d:\n", startVertex);
+    DFS(startVertex);
+
+    return 0;
+}
+	</pre>
+	
+	</div>
+	<div class="code">
+        <div>
+          <h2 name="code4">4.TRAVERSE THE ADJACENT LIST WITH DEPTH FIRST SEARCH</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+		#include <stdio.h>
+#include <stdlib.h>
+
+#define MAX 100
+
+// Structure to represent an adjacency list node
+struct Node
+{
+    int vertex;
+    struct Node *next;
+};
+
+// Structure to represent an adjacency list
+struct AdjList
+{
+    struct Node *head;
+};
+
+struct AdjList *adjList[MAX];
+int visited[MAX]; // Visited array to keep track of visited nodes
+int vertices;
+
+// Function to create a new adjacency list node
+struct Node *createNode(int v)
+{
+    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
+    newNode->vertex = v;
+    newNode->next = NULL;
+    return newNode;
+}
+
+// Function to add an edge to an undirected graph
+void addEdge(int src, int dest)
+{
+    // Add edge from src to dest
+    struct Node *newNode = createNode(dest);
+    newNode->next = adjList[src]->head;
+    adjList[src]->head = newNode;
+
+    // Add edge from dest to src (for undirected graph)
+    newNode = createNode(src);
+    newNode->next = adjList[dest]->head;
+    adjList[dest]->head = newNode;
+}
+
+// Function to perform DFS traversal
+void DFS(int v)
+{
+    printf("%d ", v); // Visit the current vertex
+    visited[v] = 1;   // Mark the current vertex as visited
+
+    struct Node *temp = adjList[v]->head;
+    while (temp != NULL)
+    {
+        int adjVertex = temp->vertex;
+        if (!visited[adjVertex])
+        {
+            DFS(adjVertex);
+        }
+        temp = temp->next;
+    }
+}
+
+// Function to initialize the visited array
+void initializeVisited()
+{
+    for (int i = 0; i < vertices; i++)
+    {
+        visited[i] = 0;
+    }
+}
+
+// Function to create the adjacency list
+void createAdjList(int edges)
+{
+    int src, dest;
+
+    for (int i = 0; i < vertices; i++)
+    {
+        adjList[i] = (struct AdjList *)malloc(sizeof(struct AdjList));
+        adjList[i]->head = NULL;
+    }
+
+    printf("Enter the edges (source and destination vertices) one by one:\n");
+    for (int i = 0; i < edges; i++)
+    {
+        printf("Edge %d - Enter source and destination: ", i + 1);
+        scanf("%d %d", &src, &dest);
+        addEdge(src, dest);
+    }
+}
+
+int main()
+{
+    int edges, startVertex;
+
+    printf("Enter the number of vertices: ");
+    scanf("%d", &vertices);
+
+    printf("Enter the number of edges: ");
+    scanf("%d", &edges);
+
+    createAdjList(edges);
+
+    printf("Enter the starting vertex for DFS: ");
+    scanf("%d", &startVertex);
+
+    initializeVisited(); // Initialize all vertices as unvisited
+
+    printf("DFS Traversal starting from vertex %d:\n", startVertex);
+    DFS(startVertex);
+
+    return 0;
+}
+	</pre>
+	
+	</div>
+	<div class="code">
+        <div>
+          <h2 name="code5">5.TRAVERSE THE ADJACENT MATRIX WITH BREADTH FIRST SEARCH</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+	#include <stdio.h>
+#include <stdlib.h>
+
+#define MAX 100
+
+int adjMatrix[MAX][MAX]; // Adjacency matrix
+int visited[MAX];        // Visited array to keep track of visited nodes
+int queue[MAX];          // Queue for BFS traversal
+int front = -1, rear = -1;
+int vertices;
+
+// Function to add an element to the queue
+void enqueue(int vertex)
+{
+    if (rear == MAX - 1)
+    {
+        printf("Queue is full\n");
+    }
+    else
+    {
+        if (front == -1)
+            front = 0;
+        queue[++rear] = vertex;
+    }
+}
+
+// Function to remove an element from the queue
+int dequeue()
+{
+    if (front == -1 || front > rear)
+    {
+        return -1;
+    }
+    else
+    {
+        return queue[front++];
+    }
+}
+
+// Function to perform BFS traversal
+void BFS(int startVertex)
+{
+    enqueue(startVertex);
+    visited[startVertex] = 1;
+
+    printf("BFS Traversal starting from vertex %d:\n", startVertex);
+
+    while (front <= rear)
+    {
+        int currentVertex = dequeue();
+        printf("%d ", currentVertex);
+
+        // Visit all adjacent vertices
+        for (int i = 0; i < vertices; i++)
+        {
+            if (adjMatrix[currentVertex][i] == 1 && !visited[i])
+            {
+                enqueue(i);
+                visited[i] = 1;
+            }
+        }
+    }
+    printf("\n");
+}
+
+// Function to create the adjacency matrix
+void createAdjMatrix(int edges)
+{
+    int src, dest;
+
+    // Initialize the matrix to 0
+    for (int i = 0; i < vertices; i++)
+    {
+        for (int j = 0; j < vertices; j++)
+        {
+            adjMatrix[i][j] = 0;
+        }
+    }
+
+    printf("Enter the edges (source and destination vertices) one by one:\n");
+    for (int i = 0; i < edges; i++)
+    {
+        printf("Edge %d - Enter source and destination: ", i + 1);
+        scanf("%d %d", &src, &dest);
+
+        // For an undirected graph, mark both (src, dest) and (dest, src) as 1
+        adjMatrix[src][dest] = 1;
+        adjMatrix[dest][src] = 1;
+    }
+}
+
+// Function to initialize the visited array
+void initializeVisited()
+{
+    for (int i = 0; i < vertices; i++)
+    {
+        visited[i] = 0;
+    }
+}
+
+int main()
+{
+    int edges, startVertex;
+
+    printf("Enter the number of vertices: ");
+    scanf("%d", &vertices);
+
+    printf("Enter the number of edges: ");
+    scanf("%d", &edges);
+
+    createAdjMatrix(edges);
+
+    printf("Enter the starting vertex for BFS: ");
+    scanf("%d", &startVertex);
+
+    initializeVisited(); // Initialize all vertices as unvisited
+
+    BFS(startVertex);
+
+    return 0;
+}
+	</pre>
+	</div>
+	
+	`,
+          
+        "Data Conversion":  `<h1>Linked List</h1>
+    <div class="code">
+        <div>
+          <h2 name="code1">1.EIMPLEMENT THE OPERATIONS OF SINGLE LINKED LIST STORING INTEGER VALUES (INSERT AT BEGIN,INSERT AT POS,INSERT AT END,DELETE AT BEGIN,DELETE AT END, DELETE AT POS, ISEMPTY, ISFULL, DISPLAY, SEARCH)</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+            
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node
+{
+    struct node *next;
+    int data;
+};
+
+int insertb(struct node *start, int val)
+{
+    struct node *temp = (struct node *)malloc(sizeof(struct node));
+    if (temp != NULL)
+    {
+        temp->data = val;
+        temp->next = start->next;
+        start->next = temp;
+        return 0;
+    }
+    return 1;
+}
+
+int inserte(struct node *start, int val)
+{
+    struct node *temp = (struct node *)malloc(sizeof(struct node));
+    if (temp == NULL)
+        return 1;
+
+    struct node *end = start;
+    while (end->next != NULL)
+    {
+        end = end->next;
+    }
+    end->next = temp;
+    temp->data = val;
+    temp->next = NULL;
+    return 0;
+}
+
+int insert(struct node *start, int val, int pos)
+{
+    if (pos < 0)
+        return 1;
+
+    struct node *temp = (struct node *)malloc(sizeof(struct node));
+    if (temp == NULL)
+        return 1;
+
+    struct node *posNode = start;
+    for (int i = 0; i < pos; i++)
+    {
+        posNode = posNode->next;
+        if (posNode == NULL)
+        {
+            free(temp);
+            return 1;
+        }
+    }
+    temp->next = posNode->next;
+    temp->data = val;
+    posNode->next = temp;
+    return 0;
+}
+
+int deleteb(struct node *start)
+{
+    struct node *temp = start->next;
+    if (temp != NULL)
+    {
+        start->next = temp->next;
+        free(temp);
+        return 0;
+    }
+    return 1;
+}
+
+int deletee(struct node *start)
+{
+    if (start->next == NULL)
+        return 1;
+
+    struct node *temp = start;
+    while (temp->next->next != NULL)
+    {
+        temp = temp->next;
+    }
+    free(temp->next);
+    temp->next = NULL;
+    return 0;
+}
+
+int delete(struct node *start, int pos)
+{
+    if (pos < 0)
+        return 1;
+
+    struct node *temp = start;
+    for (int i = 0; i < pos; i++)
+    {
+        if (temp->next == NULL)
+            return 1;
+        temp = temp->next;
+    }
+
+    if (temp->next != NULL)
+    {
+        struct node *temp2 = temp->next;
+        temp->next = temp2->next;
+        free(temp2);
+        return 0;
+    }
+    return 1;
+}
+
+int display(struct node *start)
+{
+    if (start->next == NULL)
+    {
+        return 1;
+    }
+    struct node *temp = start->next;
+    while (temp != NULL)
+    {
+        printf("%d ", temp->data);
+        temp = temp->next;
+    }
+    printf("\n");
+    return 0;
+}
+
+int search(struct node *start, int val)
+{
+    struct node *temp = start->next;
+    int counter = 0;
+    while (temp != NULL)
+    {
+        if (temp->data == val)
+        {
+            return counter;
+        }
+        counter++;
+        temp = temp->next;
+    }
+    return -1;
+}
+
+int isEmpty(struct node *start)
+{
+    return (start->next == NULL);
+}
+
+int isFull()
+{
+    struct node *temp = (struct node *)malloc(sizeof(struct node));
+    int full = (temp == NULL);
+    free(temp);
+    return full;
+}
+
+int main()
+{
+    int choice, val, pos;
+    struct node *start = (struct node *)malloc(sizeof(struct node));
+    start->next = NULL;
+
+    do
+    {
+        printf("1.INSERT BEGINNING\n2.INSERT END\n3.INSERT\n4.DELETE BEGINNING\n5.DELETE END\n6.DELETE\n7.IS EMPTY\n8.IS FULL\n9.DISPLAY\n10.SEARCH\n11.EXIT\nCHOOSE AN OPERATION: ");
+        scanf("%d", &choice);
+        switch (choice)
+        {
+        case 1:
+            printf("ENTER ELEMENT : ");
+            scanf("%d", &val);
+            insertb(start, val) ? printf("FAILED TO INSERT\n\n") : printf("INSERTED SUCCESSFULLY\n\n");
+            break;
+        case 2:
+            printf("ENTER ELEMENT : ");
+            scanf("%d", &val);
+            inserte(start, val) ? printf("FAILED TO INSERT\n\n") : printf("INSERTED SUCCESSFULLY\n\n");
+            break;
+        case 3:
+            printf("ENTER ELEMENT : ");
+            scanf("%d", &val);
+            printf("ENTER INDEX : ");
+            scanf("%d", &pos);
+            insert(start, val, pos) ? printf("FAILED TO INSERT\n\n") : printf("INSERTED SUCCESSFULLY\n\n");
+            break;
+        case 4:
+            deleteb(start) ? printf("FAILED TO DELETE\n\n") : printf("DELETED SUCCESSFULLY\n\n");
+            break;
+        case 5:
+            deletee(start) ? printf("FAILED TO DELETE\n\n") : printf("DELETED SUCCESSFULLY\n\n");
+            break;
+        case 6:
+            printf("ENTER INDEX : ");
+            scanf("%d", &pos);
+            delete (start, pos) ? printf("FAILED TO DELETE\n\n") : printf("DELETED SUCCESSFULLY\n\n");
+            break;
+        case 7:
+            isEmpty(start) ? printf("EMPTY LIST\n\n") : printf("LIST NOT EMPTY\n\n");
+            break;
+        case 8:
+            isFull() ? printf("LIST FULL\n\n") : printf("LIST NOT FULL\n\n");
+            break;
+        case 9:
+            display(start) ? printf("EMPTY LIST\n\n") : printf("\n\n");
+            break;
+        case 10:
+            printf("ENTER VALUE TO BE SEARCHED : ");
+            scanf("%d", &val);
+            pos = search(start, val);
+            (pos >= 0) ? printf("VALUE FOUND AT %d INDEX\n\n", pos) : printf("VALUE NOT FOUND\n\n");
+            break;
+        default:
+            break;
+        }
+    } while (choice != 11);
+
+    free(start); // Free the start node to prevent memory leaks
+    return 0;
+}
+
+          </pre>
+        </div>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code2">2.IMPLEMENT THE OPERATIONS OF SINGLE CIRCULAR LINKED LIST STORING INTEGER VALUES (INSERT AT BEGIN,INSERT AT POS,INSERT AT END,DELETE AT BEGIN,DELETE AT END, DELETE AT POS, ISEMPTY, ISFULL, DISPLAY, SEARCH</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+            #include <stdio.h>
+#include <stdlib.h>
+
+struct node
+{
+    int data;
+    struct node *next;
+};
+
+int insertb(struct node **start, int val)
+{
+    struct node *temp = (struct node *)malloc(sizeof(struct node));
+    if (temp == NULL)
+        return 1;
+
+    temp->data = val;
+    if (*start == NULL)
+    {
+        *start = temp;
+        temp->next = *start;
+    }
+    else
+    {
+        struct node *last = *start;
+        while (last->next != *start)
+        {
+            last = last->next;
+        }
+        temp->next = *start;
+        last->next = temp;
+        *start = temp;
+    }
+    return 0;
+}
+
+int inserte(struct node **start, int val)
+{
+    struct node *temp = (struct node *)malloc(sizeof(struct node));
+    if (temp == NULL)
+        return 1;
+
+    temp->data = val;
+    if (*start == NULL)
+    {
+        *start = temp;
+        temp->next = *start;
+    }
+    else
+    {
+        struct node *last = *start;
+        while (last->next != *start)
+        {
+            last = last->next;
+        }
+        last->next = temp;
+        temp->next = *start;
+    }
+    return 0;
+}
+
+int insert(struct node **start, int val, int pos)
+{
+    if (pos < 0)
+        return 1;
+
+    struct node *temp = (struct node *)malloc(sizeof(struct node));
+    if (temp == NULL)
+        return 1;
+
+    temp->data = val;
+    if (*start == NULL)
+    {
+        if (pos == 0)
+        {
+            *start = temp;
+            temp->next = *start;
+            return 0;
+        }
+        else
+        {
+            free(temp);
+            return 1;
+        }
+    }
+
+    struct node *curr = *start;
+    if (pos == 0)
+    {
+        return insertb(start, val);
+    }
+
+    for (int i = 1; i < pos; i++)
+    {
+        if (curr->next == *start)
+            return 1;
+        curr = curr->next;
+    }
+
+    temp->next = curr->next;
+    curr->next = temp;
+    return 0;
+}
+
+int deleteb(struct node **start)
+{
+    if (*start == NULL)
+        return 1;
+
+    struct node *temp = *start;
+    if ((*start)->next == *start)
+    {
+        *start = NULL;
+        free(temp);
+        return 0;
+    }
+
+    struct node *last = *start;
+    while (last->next != *start)
+    {
+        last = last->next;
+    }
+
+    *start = (*start)->next;
+    last->next = *start;
+    free(temp);
+    return 0;
+}
+
+int deletee(struct node **start)
+{
+    if (*start == NULL)
+        return 1;
+
+    struct node *temp = *start;
+    if ((*start)->next == *start)
+    {
+        *start = NULL;
+        free(temp);
+        return 0;
+    }
+
+    struct node *prev = NULL;
+    while (temp->next != *start)
+    {
+        prev = temp;
+        temp = temp->next;
+    }
+
+    prev->next = *start;
+    free(temp);
+    return 0;
+}
+
+int delete(struct node **start, int pos)
+{
+    if (*start == NULL || pos < 0)
+        return 1;
+
+    if (pos == 0)
+        return deleteb(start);
+
+    struct node *temp = *start;
+    struct node *prev = NULL;
+
+    for (int i = 0; i < pos; i++)
+    {
+        if (temp->next == *start)
+            return 1;
+        prev = temp;
+        temp = temp->next;
+    }
+
+    prev->next = temp->next;
+    free(temp);
+    return 0;
+}
+
+int display(struct node *start)
+{
+    if (start == NULL)
+        return 1;
+
+    struct node *temp = start;
+    do
+    {
+        printf("%d ", temp->data);
+        temp = temp->next;
+    } while (temp != start);
+    printf("\n");
+    return 0;
+}
+
+int search(struct node *start, int val)
+{
+    if (start == NULL)
+        return -1;
+
+    struct node *temp = start;
+    int pos = 0;
+    do
+    {
+        if (temp->data == val)
+            return pos;
+        pos++;
+        temp = temp->next;
+    } while (temp != start);
+
+    return -1;
+}
+
+int isEmpty(struct node *start)
+{
+    return (start == NULL);
+}
+
+int isFull()
+{
+    struct node *temp = (struct node *)malloc(sizeof(struct node));
+    int full = (temp == NULL);
+    free(temp);
+    return full;
+}
+
+int main()
+{
+    int choice, val, pos;
+    struct node *start = NULL;
+
+    do
+    {
+        printf("1.INSERT BEGINNING\n2.INSERT END\n3.INSERT\n4.DELETE BEGINNING\n5.DELETE END\n6.DELETE\n7.IS EMPTY\n8.IS FULL\n9.DISPLAY\n10.SEARCH\n11.EXIT\nCHOOSE AN OPERATION: ");
+        scanf("%d", &choice);
+        switch (choice)
+        {
+        case 1:
+            printf("ENTER ELEMENT : ");
+            scanf("%d", &val);
+            insertb(&start, val) ? printf("FAILED TO INSERT\n\n") : printf("INSERTED SUCCESSFULLY\n\n");
+            break;
+        case 2:
+            printf("ENTER ELEMENT : ");
+            scanf("%d", &val);
+            inserte(&start, val) ? printf("FAILED TO INSERT\n\n") : printf("INSERTED SUCCESSFULLY\n\n");
+            break;
+        case 3:
+            printf("ENTER ELEMENT : ");
+            scanf("%d", &val);
+            printf("ENTER POSITION : ");
+            scanf("%d", &pos);
+            insert(&start, val, pos) ? printf("FAILED TO INSERT\n\n") : printf("INSERTED SUCCESSFULLY\n\n");
+            break;
+        case 4:
+            deleteb(&start) ? printf("FAILED TO DELETE\n\n") : printf("DELETED SUCCESSFULLY\n\n");
+            break;
+        case 5:
+            deletee(&start) ? printf("FAILED TO DELETE\n\n") : printf("DELETED SUCCESSFULLY\n\n");
+            break;
+        case 6:
+            printf("ENTER POSITION : ");
+            scanf("%d", &pos);
+            delete (&start, pos) ? printf("FAILED TO DELETE\n\n") : printf("DELETED SUCCESSFULLY\n\n");
+            break;
+        case 7:
+            isEmpty(start) ? printf("EMPTY LIST\n\n") : printf("LIST NOT EMPTY\n\n");
+            break;
+        case 8:
+            isFull() ? printf("LIST FULL\n\n") : printf("LIST NOT FULL\n\n");
+            break;
+        case 9:
+            display(start) ? printf("EMPTY LIST\n\n") : printf("\n\n");
+            break;
+        case 10:
+            printf("ENTER VALUE TO BE SEARCHED : ");
+            scanf("%d", &val);
+            pos = search(start, val);
+            (pos >= 0) ? printf("VALUE FOUND AT POSITION %d\n\n", pos) : printf("VALUE NOT FOUND\n\n");
+            break;
+        default:
+            break;
+        }
+    } while (choice != 11);
+
+    // Free all nodes in the circular list
+    if (start != NULL)
+    {
+        struct node *temp = start->next;
+        while (temp != start)
+        {
+            struct node *next = temp->next;
+            free(temp);
+            temp = next;
+        }
+        free(start);
+    }
+
+    return 0;
+}
+          </pre>
+        </div>
+       
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code3">3.IMPLEMENT THE OPERATIONS OF DOUBLY LINKED LIST STORING INTEGER VALUES (INSERT AT BEGIN,INSERT AT POS,INSERT AT END,DELETE AT BEGIN,DELETE AT END, DELETE AT POS, ISEMPTY, ISFULL, DISPLAY, SEARCH)
+          </h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>#include <stdio.h>
+#include <stdlib.h>
+
+struct node
+{
+    int data;
+    struct node *prev;
+    struct node *next;
+};
+
+int insertb(struct node **start, int val)
+{
+    struct node *temp = (struct node *)malloc(sizeof(struct node));
+    if (temp == NULL)
+        return 1;
+
+    temp->data = val;
+    temp->prev = NULL;
+    temp->next = *start;
+
+    if (*start != NULL)
+    {
+        (*start)->prev = temp;
+    }
+    *start = temp;
+    return 0;
+}
+
+int inserte(struct node **start, int val)
+{
+    struct node *temp = (struct node *)malloc(sizeof(struct node));
+    if (temp == NULL)
+        return 1;
+
+    temp->data = val;
+    temp->next = NULL;
+
+    if (*start == NULL)
+    {
+        temp->prev = NULL;
+        *start = temp;
+    }
+    else
+    {
+        struct node *last = *start;
+        while (last->next != NULL)
+        {
+            last = last->next;
+        }
+        last->next = temp;
+        temp->prev = last;
+    }
+    return 0;
+}
+
+int insert(struct node **start, int val, int pos)
+{
+    if (pos < 0)
+        return 1;
+
+    struct node *temp = (struct node *)malloc(sizeof(struct node));
+    if (temp == NULL)
+        return 1;
+
+    temp->data = val;
+
+    if (*start == NULL)
+    {
+        if (pos == 0)
+        {
+            temp->prev = NULL;
+            temp->next = NULL;
+            *start = temp;
+            return 0;
+        }
+        else
+        {
+            free(temp);
+            return 1;
+        }
+    }
+
+    if (pos == 0)
+    {
+        return insertb(start, val);
+    }
+
+    struct node *curr = *start;
+    for (int i = 0; i < pos - 1; i++)
+    {
+        if (curr->next == NULL)
+        {
+            free(temp);
+            return 1;
+        }
+        curr = curr->next;
+    }
+
+    temp->next = curr->next;
+    if (curr->next != NULL)
+    {
+        curr->next->prev = temp;
+    }
+    temp->prev = curr;
+    curr->next = temp;
+
+    return 0;
+}
+
+int deleteb(struct node **start)
+{
+    if (*start == NULL)
+        return 1;
+
+    struct node *temp = *start;
+    *start = (*start)->next;
+
+    if (*start != NULL)
+    {
+        (*start)->prev = NULL;
+    }
+    free(temp);
+    return 0;
+}
+
+int deletee(struct node **start)
+{
+    if (*start == NULL)
+        return 1;
+
+    struct node *temp = *start;
+    if (temp->next == NULL)
+    {
+        *start = NULL;
+        free(temp);
+        return 0;
+    }
+
+    while (temp->next != NULL)
+    {
+        temp = temp->next;
+    }
+
+    temp->prev->next = NULL;
+    free(temp);
+    return 0;
+}
+
+int delete(struct node **start, int pos)
+{
+    if (*start == NULL || pos < 0)
+        return 1;
+
+    struct node *temp = *start;
+
+    if (pos == 0)
+    {
+        return deleteb(start);
+    }
+
+    for (int i = 0; i < pos; i++)
+    {
+        if (temp->next == NULL)
+            return 1;
+        temp = temp->next;
+    }
+
+    temp->prev->next = temp->next;
+    if (temp->next != NULL)
+    {
+        temp->next->prev = temp->prev;
+    }
+    free(temp);
+    return 0;
+}
+
+int display(struct node *start)
+{
+    if (start == NULL)
+        return 1;
+
+    struct node *temp = start;
+    while (temp != NULL)
+    {
+        printf("%d ", temp->data);
+        temp = temp->next;
+    }
+    printf("\n");
+    return 0;
+}
+
+int search(struct node *start, int val)
+{
+    struct node *temp = start;
+    int pos = 0;
+    while (temp != NULL)
+    {
+        if (temp->data == val)
+            return pos;
+        temp = temp->next;
+        pos++;
+    }
+    return -1;
+}
+
+int isEmpty(struct node *start)
+{
+    return (start == NULL);
+}
+
+int isFull()
+{
+    struct node *temp = (struct node *)malloc(sizeof(struct node));
+    int full = (temp == NULL);
+    free(temp);
+    return full;
+}
+
+int main()
+{
+    int choice, val, pos;
+    struct node *start = NULL;
+
+    do
+    {
+        printf("1.INSERT BEGINNING\n2.INSERT END\n3.INSERT\n4.DELETE BEGINNING\n5.DELETE END\n6.DELETE\n7.IS EMPTY\n8.IS FULL\n9.DISPLAY\n10.SEARCH\n11.EXIT\nCHOOSE AN OPERATION: ");
+        scanf("%d", &choice);
+        switch (choice)
+        {
+        case 1:
+            printf("ENTER ELEMENT : ");
+            scanf("%d", &val);
+            insertb(&start, val) ? printf("FAILED TO INSERT\n\n") : printf("INSERTED SUCCESSFULLY\n\n");
+            break;
+        case 2:
+            printf("ENTER ELEMENT : ");
+            scanf("%d", &val);
+            inserte(&start, val) ? printf("FAILED TO INSERT\n\n") : printf("INSERTED SUCCESSFULLY\n\n");
+            break;
+        case 3:
+            printf("ENTER ELEMENT : ");
+            scanf("%d", &val);
+            printf("ENTER POSITION : ");
+            scanf("%d", &pos);
+            insert(&start, val, pos) ? printf("FAILED TO INSERT\n\n") : printf("INSERTED SUCCESSFULLY\n\n");
+            break;
+        case 4:
+            deleteb(&start) ? printf("FAILED TO DELETE\n\n") : printf("DELETED SUCCESSFULLY\n\n");
+            break;
+        case 5:
+            deletee(&start) ? printf("FAILED TO DELETE\n\n") : printf("DELETED SUCCESSFULLY\n\n");
+            break;
+        case 6:
+            printf("ENTER POSITION : ");
+            scanf("%d", &pos);
+            delete (&start, pos) ? printf("FAILED TO DELETE\n\n") : printf("DELETED SUCCESSFULLY\n\n");
+            break;
+        case 7:
+            isEmpty(start) ? printf("EMPTY LIST\n\n") : printf("LIST NOT EMPTY\n\n");
+            break;
+        case 8:
+            isFull() ? printf("LIST FULL\n\n") : printf("LIST NOT FULL\n\n");
+            break;
+        case 9:
+            display(start) ? printf("EMPTY LIST\n\n") : printf("\n\n");
+            break;
+        case 10:
+            printf("ENTER VALUE TO BE SEARCHED : ");
+            scanf("%d", &val);
+            pos = search(start, val);
+            (pos >= 0) ? printf("VALUE FOUND AT POSITION %d\n\n", pos) : printf("VALUE NOT FOUND\n\n");
+            break;
+        default:
+            break;
+        }
+    } while (choice != 11);
+
+    // Free all nodes in the doubly linked list
+    while (start != NULL)
+    {
+        struct node *temp = start;
+        start = start->next;
+        free(temp);
+    }
+
+    return 0;
+}</pre>
+        </div>
+      
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code4">4.IMPLEMENT THE OPERATIONS OF DOUBLY CIRCULAR LINKED LIST STORING INTEGER VALUES (INSERT AT BEGIN,INSERT AT POS,INSERT AT END,DELETE AT BEGIN,DELETE AT END, DELETE AT POS, ISEMPTY, ISFULL, DISPLAY, SEARCH)</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>#include <stdio.h>
+#include <stdlib.h>
+
+struct node
+{
+    int data;
+    struct node *prev;
+    struct node *next;
+};
+
+// Insert at the beginning
+int insertb(struct node **start, int val)
+{
+    struct node *temp = (struct node *)malloc(sizeof(struct node));
+    if (temp == NULL)
+        return 1;
+
+    temp->data = val;
+    if (*start == NULL)
+    {
+        temp->next = temp;
+        temp->prev = temp;
+        *start = temp;
+    }
+    else
+    {
+        struct node *last = (*start)->prev;
+
+        temp->next = *start;
+        temp->prev = last;
+        last->next = temp;
+        (*start)->prev = temp;
+
+        *start = temp;
+    }
+    return 0;
+}
+
+// Insert at the end
+int inserte(struct node **start, int val)
+{
+    struct node *temp = (struct node *)malloc(sizeof(struct node));
+    if (temp == NULL)
+        return 1;
+
+    temp->data = val;
+    if (*start == NULL)
+    {
+        temp->next = temp;
+        temp->prev = temp;
+        *start = temp;
+    }
+    else
+    {
+        struct node *last = (*start)->prev;
+
+        temp->next = *start;
+        temp->prev = last;
+        last->next = temp;
+        (*start)->prev = temp;
+    }
+    return 0;
+}
+
+// Insert at a specific position
+int insert(struct node **start, int val, int pos)
+{
+    if (pos < 0)
+        return 1;
+
+    struct node *temp = (struct node *)malloc(sizeof(struct node));
+    if (temp == NULL)
+        return 1;
+
+    temp->data = val;
+    if (*start == NULL)
+    {
+        if (pos == 0)
+        {
+            temp->next = temp;
+            temp->prev = temp;
+            *start = temp;
+            return 0;
+        }
+        else
+        {
+            free(temp);
+            return 1;
+        }
+    }
+
+    if (pos == 0)
+    {
+        return insertb(start, val);
+    }
+
+    struct node *curr = *start;
+    for (int i = 0; i < pos - 1; i++)
+    {
+        curr = curr->next;
+        if (curr == *start)
+        {
+            free(temp);
+            return 1;
+        }
+    }
+
+    temp->next = curr->next;
+    temp->prev = curr;
+    curr->next->prev = temp;
+    curr->next = temp;
+
+    return 0;
+}
+
+// Delete at the beginning
+int deleteb(struct node **start)
+{
+    if (*start == NULL)
+        return 1;
+
+    struct node *temp = *start;
+    if (temp->next == *start)
+    {
+        *start = NULL;
+    }
+    else
+    {
+        struct node *last = temp->prev;
+        *start = temp->next;
+        (*start)->prev = last;
+        last->next = *start;
+    }
+    free(temp);
+    return 0;
+}
+
+// Delete at the end
+int deletee(struct node **start)
+{
+    if (*start == NULL)
+        return 1;
+
+    struct node *temp = (*start)->prev;
+    if (temp->next == *start)
+    {
+        *start = NULL;
+    }
+    else
+    {
+        temp->prev->next = *start;
+        (*start)->prev = temp->prev;
+    }
+    free(temp);
+    return 0;
+}
+
+// Delete at a specific position
+int delete(struct node **start, int pos)
+{
+    if (*start == NULL || pos < 0)
+        return 1;
+
+    struct node *temp = *start;
+
+    if (pos == 0)
+    {
+        return deleteb(start);
+    }
+
+    for (int i = 0; i < pos; i++)
+    {
+        temp = temp->next;
+        if (temp == *start)
+            return 1;
+    }
+
+    temp->prev->next = temp->next;
+    temp->next->prev = temp->prev;
+    free(temp);
+
+    return 0;
+}
+
+// Display the list
+int display(struct node *start)
+{
+    if (start == NULL)
+        return 1;
+
+    struct node *temp = start;
+    do
+    {
+        printf("%d ", temp->data);
+        temp = temp->next;
+    } while (temp != start);
+    printf("\n");
+    return 0;
+}
+
+// Search for a value in the list
+int search(struct node *start, int val)
+{
+    if (start == NULL)
+        return -1;
+
+    struct node *temp = start;
+    int pos = 0;
+    do
+    {
+        if (temp->data == val)
+            return pos;
+        temp = temp->next;
+        pos++;
+    } while (temp != start);
+    return -1;
+}
+
+// Check if the list is empty
+int isEmpty(struct node *start)
+{
+    return (start == NULL);
+}
+
+// Check if the list is full
+int isFull()
+{
+    struct node *temp = (struct node *)malloc(sizeof(struct node));
+    int full = (temp == NULL);
+    free(temp);
+    return full;
+}
+
+int main()
+{
+    int choice, val, pos;
+    struct node *start = NULL;
+
+    do
+    {
+        printf("1.INSERT BEGINNING\n2.INSERT END\n3.INSERT\n4.DELETE BEGINNING\n5.DELETE END\n6.DELETE\n7.IS EMPTY\n8.IS FULL\n9.DISPLAY\n10.SEARCH\n11.EXIT\nCHOOSE AN OPERATION: ");
+        scanf("%d", &choice);
+        switch (choice)
+        {
+        case 1:
+            printf("ENTER ELEMENT : ");
+            scanf("%d", &val);
+            insertb(&start, val) ? printf("FAILED TO INSERT\n\n") : printf("INSERTED SUCCESSFULLY\n\n");
+            break;
+        case 2:
+            printf("ENTER ELEMENT : ");
+            scanf("%d", &val);
+            inserte(&start, val) ? printf("FAILED TO INSERT\n\n") : printf("INSERTED SUCCESSFULLY\n\n");
+            break;
+        case 3:
+            printf("ENTER ELEMENT : ");
+            scanf("%d", &val);
+            printf("ENTER POSITION : ");
+            scanf("%d", &pos);
+            insert(&start, val, pos) ? printf("FAILED TO INSERT\n\n") : printf("INSERTED SUCCESSFULLY\n\n");
+            break;
+        case 4:
+            deleteb(&start) ? printf("FAILED TO DELETE\n\n") : printf("DELETED SUCCESSFULLY\n\n");
+            break;
+        case 5:
+            deletee(&start) ? printf("FAILED TO DELETE\n\n") : printf("DELETED SUCCESSFULLY\n\n");
+            break;
+        case 6:
+            printf("ENTER POSITION : ");
+            scanf("%d", &pos);
+            delete (&start, pos) ? printf("FAILED TO DELETE\n\n") : printf("DELETED SUCCESSFULLY\n\n");
+            break;
+        case 7:
+            isEmpty(start) ? printf("EMPTY LIST\n\n") : printf("LIST NOT EMPTY\n\n");
+            break;
+        case 8:
+            isFull() ? printf("LIST FULL\n\n") : printf("LIST NOT FULL\n\n");
+            break;
+        case 9:
+            display(start) ? printf("EMPTY LIST\n\n") : printf("\n\n");
+            break;
+        case 10:
+            printf("ENTER VALUE TO BE SEARCHED : ");
+            scanf("%d", &val);
+            pos = search(start, val);
+            (pos >= 0) ? printf("VALUE FOUND AT POSITION %d\n\n", pos) : printf("VALUE NOT FOUND\n\n");
+            break;
+        default:
+            break;
+        }
+    } while (choice != 11);
+
+    // Free the circular linked list
+    while (start != NULL)
+    {
+        deleteb(&start);
+    }
+
+    return 0;
+}</pre>
+       </div>
+       
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code5">5.IMPLEMENT THE OPERATIONS OF SINGLE LINKED LIST STORING STRING VALUES (INSERT AT BEGIN,INSERT AT POS,INSERT AT END,DELETE AT BEGIN,DELETE AT END, DELETE AT POS, ISEMPTY, ISFULL, DISPLAY, SEARCH)</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>#include <stdio.h>
+#include <stdlib.h>
+
+struct node
+{
+    char data;
+    struct node *next;
+};
+
+// Insert at the beginning
+int insertb(struct node **start, char val)
+{
+    struct node *temp = (struct node *)malloc(sizeof(struct node));
+    if (temp == NULL)
+        return 1;
+
+    temp->data = val;
+    temp->next = *start;
+    *start = temp;
+    return 0;
+}
+
+// Insert at the end
+int inserte(struct node **start, char val)
+{
+    struct node *temp = (struct node *)malloc(sizeof(struct node));
+    if (temp == NULL)
+        return 1;
+
+    temp->data = val;
+    temp->next = NULL;
+
+    if (*start == NULL)
+    {
+        *start = temp;
+    }
+    else
+    {
+        struct node *end = *start;
+        while (end->next != NULL)
+        {
+            end = end->next;
+        }
+        end->next = temp;
+    }
+    return 0;
+}
+
+// Insert at a specific position
+int insert(struct node **start, char val, int pos)
+{
+    if (pos < 0)
+        return 1;
+
+    struct node *temp = (struct node *)malloc(sizeof(struct node));
+    if (temp == NULL)
+        return 1;
+
+    temp->data = val;
+    if (pos == 0)
+    {
+        temp->next = *start;
+        *start = temp;
+    }
+    else
+    {
+        struct node *current = *start;
+        for (int i = 0; i < pos - 1 && current != NULL; i++)
+        {
+            current = current->next;
+        }
+        if (current == NULL)
+        {
+            free(temp);
+            return 1;
+        }
+        temp->next = current->next;
+        current->next = temp;
+    }
+    return 0;
+}
+
+// Delete at the beginning
+int deleteb(struct node **start)
+{
+    if (*start == NULL)
+        return 1;
+
+    struct node *temp = *start;
+    *start = (*start)->next;
+    free(temp);
+    return 0;
+}
+
+// Delete at the end
+int deletee(struct node **start)
+{
+    if (*start == NULL)
+        return 1;
+
+    struct node *temp = *start;
+    if (temp->next == NULL)
+    {
+        *start = NULL;
+        free(temp);
+        return 0;
+    }
+
+    while (temp->next->next != NULL)
+    {
+        temp = temp->next;
+    }
+    free(temp->next);
+    temp->next = NULL;
+    return 0;
+}
+
+// Delete at a specific position
+int delete(struct node **start, int pos)
+{
+    if (*start == NULL || pos < 0)
+        return 1;
+
+    struct node *temp = *start;
+    if (pos == 0)
+    {
+        *start = temp->next;
+        free(temp);
+        return 0;
+    }
+
+    for (int i = 0; i < pos - 1 && temp != NULL; i++)
+    {
+        temp = temp->next;
+    }
+    if (temp == NULL || temp->next == NULL)
+        return 1;
+
+    struct node *temp2 = temp->next;
+    temp->next = temp2->next;
+    free(temp2);
+    return 0;
+}
+
+// Display the list
+int display(struct node *start)
+{
+    if (start == NULL)
+        return 1;
+
+    struct node *temp = start;
+    while (temp != NULL)
+    {
+        printf("%c ", temp->data);
+        temp = temp->next;
+    }
+    printf("\n");
+    return 0;
+}
+
+// Search for a value in the list
+int search(struct node *start, char val)
+{
+    struct node *temp = start;
+    int pos = 0;
+    while (temp != NULL)
+    {
+        if (temp->data == val)
+            return pos;
+        temp = temp->next;
+        pos++;
+    }
+    return -1;
+}
+
+// Check if the list is empty
+int isEmpty(struct node *start)
+{
+    return (start == NULL);
+}
+
+// Check if the list is full
+int isFull()
+{
+    struct node *temp = (struct node *)malloc(sizeof(struct node));
+    int full = (temp == NULL);
+    free(temp);
+    return full;
+}
+
+int main()
+{
+    int choice, pos;
+    char val;
+    struct node *start = NULL;
+
+    do
+    {
+        printf("1.INSERT BEGINNING\n2.INSERT END\n3.INSERT\n4.DELETE BEGINNING\n5.DELETE END\n6.DELETE\n7.IS EMPTY\n8.IS FULL\n9.DISPLAY\n10.SEARCH\n11.EXIT\nCHOOSE AN OPERATION: ");
+        scanf("%d", &choice);
+        switch (choice)
+        {
+        case 1:
+            printf("ENTER CHARACTER: ");
+            scanf(" %c", &val);
+            insertb(&start, val) ? printf("FAILED TO INSERT\n\n") : printf("INSERTED SUCCESSFULLY\n\n");
+            break;
+        case 2:
+            printf("ENTER CHARACTER: ");
+            scanf(" %c", &val);
+            inserte(&start, val) ? printf("FAILED TO INSERT\n\n") : printf("INSERTED SUCCESSFULLY\n\n");
+            break;
+        case 3:
+            printf("ENTER CHARACTER: ");
+            scanf(" %c", &val);
+            printf("ENTER POSITION: ");
+            scanf("%d", &pos);
+            insert(&start, val, pos) ? printf("FAILED TO INSERT\n\n") : printf("INSERTED SUCCESSFULLY\n\n");
+            break;
+        case 4:
+            deleteb(&start) ? printf("FAILED TO DELETE\n\n") : printf("DELETED SUCCESSFULLY\n\n");
+            break;
+        case 5:
+            deletee(&start) ? printf("FAILED TO DELETE\n\n") : printf("DELETED SUCCESSFULLY\n\n");
+            break;
+        case 6:
+            printf("ENTER POSITION: ");
+            scanf("%d", &pos);
+            delete (&start, pos) ? printf("FAILED TO DELETE\n\n") : printf("DELETED SUCCESSFULLY\n\n");
+            break;
+        case 7:
+            isEmpty(start) ? printf("EMPTY LIST\n\n") : printf("LIST NOT EMPTY\n\n");
+            break;
+        case 8:
+            isFull() ? printf("LIST FULL\n\n") : printf("LIST NOT FULL\n\n");
+            break;
+        case 9:
+            display(start) ? printf("EMPTY LIST\n\n") : printf("\n\n");
+            break;
+        case 10:
+            printf("ENTER CHARACTER TO BE SEARCHED: ");
+            scanf(" %c", &val);
+            pos = search(start, val);
+            (pos >= 0) ? printf("CHARACTER FOUND AT POSITION %d\n\n", pos) : printf("CHARACTER NOT FOUND\n\n");
+            break;
+        default:
+            break;
+        }
+    } while (choice != 11);
+
+    // Free all nodes in the list
+    while (start != NULL)
+    {
+        deleteb(&start);
+    }
+
+    return 0;
+}</pre>
+       </div>
+       
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code6">6.IMPLEMENT THE OPERATIONS OF SINGLE CIRCULAR LINKED LIST STORING STRING VALUES (INSERT AT BEGIN,INSERT AT POS,INSERT AT END,DELETE AT BEGIN,DELETE AT END, DELETE AT POS, ISEMPTY, ISFULL, DISPLAY, SEARCH)</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+            <pre>#include <stdio.h>
+#include <stdlib.h>
+
+struct node
+{
+    char data;
+    struct node *next;
+};
+
+// Insert at the beginning
+int insertb(struct node **last, char val)
+{
+    struct node *temp = (struct node *)malloc(sizeof(struct node));
+    if (temp == NULL)
+        return 1;
+
+    temp->data = val;
+    if (*last == NULL)
+    {
+        temp->next = temp;
+        *last = temp;
+    }
+    else
+    {
+        temp->next = (*last)->next;
+        (*last)->next = temp;
+    }
+    return 0;
+}
+
+// Insert at the end
+int inserte(struct node **last, char val)
+{
+    struct node *temp = (struct node *)malloc(sizeof(struct node));
+    if (temp == NULL)
+        return 1;
+
+    temp->data = val;
+    if (*last == NULL)
+    {
+        temp->next = temp;
+        *last = temp;
+    }
+    else
+    {
+        temp->next = (*last)->next;
+        (*last)->next = temp;
+        *last = temp;
+    }
+    return 0;
+}
+
+// Insert at a specific position
+int insert(struct node **last, char val, int pos)
+{
+    if (pos < 0)
+        return 1;
+
+    struct node *temp = (struct node *)malloc(sizeof(struct node));
+    if (temp == NULL)
+        return 1;
+
+    temp->data = val;
+    if (*last == NULL)
+    {
+        if (pos == 0)
+        {
+            temp->next = temp;
+            *last = temp;
+            return 0;
+        }
+        else
+        {
+            free(temp);
+            return 1;
+        }
+    }
+
+    struct node *current = (*last)->next;
+    for (int i = 0; i < pos && current != *last; i++)
+    {
+        current = current->next;
+    }
+    temp->next = current->next;
+    current->next = temp;
+    if (current == *last)
+        *last = temp;
+    return 0;
+}
+
+// Delete at the beginning
+int deleteb(struct node **last)
+{
+    if (*last == NULL)
+        return 1;
+
+    struct node *temp = (*last)->next;
+    if (*last == temp)
+    {
+        *last = NULL;
+    }
+    else
+    {
+        (*last)->next = temp->next;
+    }
+    free(temp);
+    return 0;
+}
+
+// Delete at the end
+int deletee(struct node **last)
+{
+    if (*last == NULL)
+        return 1;
+
+    struct node *temp = (*last)->next;
+    if (*last == temp)
+    {
+        *last = NULL;
+        free(temp);
+    }
+    else
+    {
+        while (temp->next != *last)
+        {
+            temp = temp->next;
+        }
+        temp->next = (*last)->next;
+        free(*last);
+        *last = temp;
+    }
+    return 0;
+}
+
+// Delete at a specific position
+int delete(struct node **last, int pos)
+{
+    if (*last == NULL || pos < 0)
+        return 1;
+
+    struct node *temp = (*last)->next;
+    if (pos == 0)
+    {
+        return deleteb(last);
+    }
+
+    for (int i = 0; i < pos - 1 && temp->next != (*last)->next; i++)
+    {
+        temp = temp->next;
+    }
+    if (temp->next == (*last)->next)
+        return 1;
+
+    struct node *temp2 = temp->next;
+    temp->next = temp2->next;
+    if (temp2 == *last)
+        *last = temp;
+    free(temp2);
+    return 0;
+}
+
+// Display the list
+int display(struct node *last)
+{
+    if (last == NULL)
+        return 1;
+
+    struct node *temp = last->next;
+    do
+    {
+        printf("%c ", temp->data);
+        temp = temp->next;
+    } while (temp != last->next);
+    printf("\n");
+    return 0;
+}
+
+// Search for a value in the list
+int search(struct node *last, char val)
+{
+    if (last == NULL)
+        return -1;
+
+    struct node *temp = last->next;
+    int pos = 0;
+    do
+    {
+        if (temp->data == val)
+            return pos;
+        temp = temp->next;
+        pos++;
+    } while (temp != last->next);
+    return -1;
+}
+
+// Check if the list is empty
+int isEmpty(struct node *last)
+{
+    return (last == NULL);
+}
+
+// Check if the list is full
+int isFull()
+{
+    struct node *temp = (struct node *)malloc(sizeof(struct node));
+    int full = (temp == NULL);
+    free(temp);
+    return full;
+}
+
+int main()
+{
+    int choice, pos;
+    char val;
+    struct node *last = NULL;
+
+    do
+    {
+        printf("1.INSERT BEGINNING\n2.INSERT END\n3.INSERT\n4.DELETE BEGINNING\n5.DELETE END\n6.DELETE\n7.IS EMPTY\n8.IS FULL\n9.DISPLAY\n10.SEARCH\n11.EXIT\nCHOOSE AN OPERATION: ");
+        scanf("%d", &choice);
+        switch (choice)
+        {
+        case 1:
+            printf("ENTER CHARACTER: ");
+            scanf(" %c", &val);
+            insertb(&last, val) ? printf("FAILED TO INSERT\n\n") : printf("INSERTED SUCCESSFULLY\n\n");
+            break;
+        case 2:
+            printf("ENTER CHARACTER: ");
+            scanf(" %c", &val);
+            inserte(&last, val) ? printf("FAILED TO INSERT\n\n") : printf("INSERTED SUCCESSFULLY\n\n");
+            break;
+        case 3:
+            printf("ENTER CHARACTER: ");
+            scanf(" %c", &val);
+            printf("ENTER POSITION: ");
+            scanf("%d", &pos);
+            insert(&last, val, pos) ? printf("FAILED TO INSERT\n\n") : printf("INSERTED SUCCESSFULLY\n\n");
+            break;
+        case 4:
+            deleteb(&last) ? printf("FAILED TO DELETE\n\n") : printf("DELETED SUCCESSFULLY\n\n");
+            break;
+        case 5:
+            deletee(&last) ? printf("FAILED TO DELETE\n\n") : printf("DELETED SUCCESSFULLY\n\n");
+            break;
+        case 6:
+            printf("ENTER POSITION: ");
+            scanf("%d", &pos);
+            delete (&last, pos) ? printf("FAILED TO DELETE\n\n") : printf("DELETED SUCCESSFULLY\n\n");
+            break;
+        case 7:
+            isEmpty(last) ? printf("EMPTY LIST\n\n") : printf("LIST NOT EMPTY\n\n");
+            break;
+        case 8:
+            isFull() ? printf("LIST FULL\n\n") : printf("LIST NOT FULL\n\n");
+            break;
+        case 9:
+            display(last) ? printf("EMPTY LIST\n\n") : printf("\n\n");
+            break;
+        case 10:
+            printf("ENTER CHARACTER TO BE SEARCHED: ");
+            scanf(" %c", &val);
+            pos = search(last, val);
+            (pos >= 0) ? printf("CHARACTER FOUND AT POSITION %d\n\n", pos) : printf("CHARACTER NOT FOUND\n\n");
+            break;
+        default:
+            break;
+        }
+    } while (choice != 11);
+
+    // Free all nodes in the list
+    while (!isEmpty(last))
+    {
+        deleteb(&last);
+    }
+
+    return 0;
+}</pre>
+          </div>
+        
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code7">7. IMPLEMENT THE OPERATIONS OF DOUBLY LINKED LIST STORING STRING VALUES (INSERT AT BEGIN,INSERT AT POS,INSERT AT END,DELETE AT BEGIN,DELETE AT END, DELETE AT POS, ISEMPTY, ISFULL, DISPLAY, SEARCH)</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>#include <stdio.h>
+#include <stdlib.h>
+
+struct node
+{
+    char data;
+    struct node *prev;
+    struct node *next;
+};
+
+// Insert at the beginning
+int insertb(struct node **head, char val)
+{
+    struct node *temp = (struct node *)malloc(sizeof(struct node));
+    if (temp == NULL)
+        return 1;
+
+    temp->data = val;
+    temp->prev = NULL;
+    temp->next = *head;
+
+    if (*head != NULL)
+    {
+        (*head)->prev = temp;
+    }
+    *head = temp;
+    return 0;
+}
+
+// Insert at the end
+int inserte(struct node **head, char val)
+{
+    struct node *temp = (struct node *)malloc(sizeof(struct node));
+    if (temp == NULL)
+        return 1;
+
+    temp->data = val;
+    temp->next = NULL;
+
+    if (*head == NULL)
+    {
+        temp->prev = NULL;
+        *head = temp;
+        return 0;
+    }
+
+    struct node *last = *head;
+    while (last->next != NULL)
+    {
+        last = last->next;
+    }
+    last->next = temp;
+    temp->prev = last;
+    return 0;
+}
+
+// Insert at a specific position
+int insert(struct node **head, char val, int pos)
+{
+    if (pos < 0)
+        return 1;
+
+    struct node *temp = (struct node *)malloc(sizeof(struct node));
+    if (temp == NULL)
+        return 1;
+
+    temp->data = val;
+    if (pos == 0)
+    {
+        temp->next = *head;
+        temp->prev = NULL;
+        if (*head != NULL)
+            (*head)->prev = temp;
+        *head = temp;
+        return 0;
+    }
+
+    struct node *current = *head;
+    for (int i = 0; i < pos - 1 && current != NULL; i++)
+    {
+        current = current->next;
+    }
+    if (current == NULL)
+    {
+        free(temp);
+        return 1;
+    }
+
+    temp->next = current->next;
+    temp->prev = current;
+    if (current->next != NULL)
+        current->next->prev = temp;
+    current->next = temp;
+    return 0;
+}
+
+// Delete at the beginning
+int deleteb(struct node **head)
+{
+    if (*head == NULL)
+        return 1;
+
+    struct node *temp = *head;
+    *head = (*head)->next;
+    if (*head != NULL)
+    {
+        (*head)->prev = NULL;
+    }
+    free(temp);
+    return 0;
+}
+
+// Delete at the end
+int deletee(struct node **head)
+{
+    if (*head == NULL)
+        return 1;
+
+    struct node *temp = *head;
+    while (temp->next != NULL)
+    {
+        temp = temp->next;
+    }
+    if (temp->prev != NULL)
+    {
+        temp->prev->next = NULL;
+    }
+    else
+    {
+        *head = NULL;
+    }
+    free(temp);
+    return 0;
+}
+
+// Delete at a specific position
+int delete(struct node **head, int pos)
+{
+    if (*head == NULL || pos < 0)
+        return 1;
+
+    struct node *temp = *head;
+    for (int i = 0; i < pos && temp != NULL; i++)
+    {
+        temp = temp->next;
+    }
+    if (temp == NULL)
+        return 1;
+
+    if (temp->prev != NULL)
+    {
+        temp->prev->next = temp->next;
+    }
+    else
+    {
+        *head = temp->next;
+    }
+    if (temp->next != NULL)
+    {
+        temp->next->prev = temp->prev;
+    }
+    free(temp);
+    return 0;
+}
+
+// Display the list
+int display(struct node *head)
+{
+    if (head == NULL)
+        return 1;
+
+    struct node *temp = head;
+    while (temp != NULL)
+    {
+        printf("%c ", temp->data);
+        temp = temp->next;
+    }
+    printf("\n");
+    return 0;
+}
+
+// Search for a value in the list
+int search(struct node *head, char val)
+{
+    struct node *temp = head;
+    int pos = 0;
+    while (temp != NULL)
+    {
+        if (temp->data == val)
+            return pos;
+        temp = temp->next;
+        pos++;
+    }
+    return -1;
+}
+
+// Check if the list is empty
+int isEmpty(struct node *head)
+{
+    return (head == NULL);
+}
+
+// Check if the list is full
+int isFull()
+{
+    struct node *temp = (struct node *)malloc(sizeof(struct node));
+    int full = (temp == NULL);
+    free(temp);
+    return full;
+}
+
+int main()
+{
+    int choice, pos;
+    char val;
+    struct node *head = NULL;
+
+    do
+    {
+        printf("1.INSERT BEGINNING\n2.INSERT END\n3.INSERT\n4.DELETE BEGINNING\n5.DELETE END\n6.DELETE\n7.IS EMPTY\n8.IS FULL\n9.DISPLAY\n10.SEARCH\n11.EXIT\nCHOOSE AN OPERATION: ");
+        scanf("%d", &choice);
+        switch (choice)
+        {
+        case 1:
+            printf("ENTER CHARACTER: ");
+            scanf(" %c", &val);
+            insertb(&head, val) ? printf("FAILED TO INSERT\n\n") : printf("INSERTED SUCCESSFULLY\n\n");
+            break;
+        case 2:
+            printf("ENTER CHARACTER: ");
+            scanf(" %c", &val);
+            inserte(&head, val) ? printf("FAILED TO INSERT\n\n") : printf("INSERTED SUCCESSFULLY\n\n");
+            break;
+        case 3:
+            printf("ENTER CHARACTER: ");
+            scanf(" %c", &val);
+            printf("ENTER POSITION: ");
+            scanf("%d", &pos);
+            insert(&head, val, pos) ? printf("FAILED TO INSERT\n\n") : printf("INSERTED SUCCESSFULLY\n\n");
+            break;
+        case 4:
+            deleteb(&head) ? printf("FAILED TO DELETE\n\n") : printf("DELETED SUCCESSFULLY\n\n");
+            break;
+        case 5:
+            deletee(&head) ? printf("FAILED TO DELETE\n\n") : printf("DELETED SUCCESSFULLY\n\n");
+            break;
+        case 6:
+            printf("ENTER POSITION: ");
+            scanf("%d", &pos);
+            delete (&head, pos) ? printf("FAILED TO DELETE\n\n") : printf("DELETED SUCCESSFULLY\n\n");
+            break;
+        case 7:
+            isEmpty(head) ? printf("EMPTY LIST\n\n") : printf("LIST NOT EMPTY\n\n");
+            break;
+        case 8:
+            isFull() ? printf("LIST FULL\n\n") : printf("LIST NOT FULL\n\n");
+            break;
+        case 9:
+            display(head) ? printf("EMPTY LIST\n\n") : printf("\n\n");
+            break;
+        case 10:
+            printf("ENTER CHARACTER TO BE SEARCHED: ");
+            scanf(" %c", &val);
+            pos = search(head, val);
+            (pos >= 0) ? printf("CHARACTER FOUND AT POSITION %d\n\n", pos) : printf("CHARACTER NOT FOUND\n\n");
+            break;
+        default:
+            break;
+        }
+    } while (choice != 11);
+
+    // Free all nodes in the list
+    while (!isEmpty(head))
+    {
+        deleteb(&head);
+    }
+
+    return 0;
+}</pre>
+        </div>
+        
+      </div>
+      `,
+      
+        "File Handling":  `<h1 style="text-align: center;">Queues</h1>
+    <h2>1. IMPLEMENT THE OPERATIONS OF SIMPLE QUEUE IN AN INTEGER ARRAY (INSERT, DELETE, PEEK, ISEMPTY, ISFULL).</h2>
+   <pre>#include <stdio.h>
+#define SIZE 5
+
+void insert(int *queue, int *front, int *rear, int value)
+{
+    if (*rear < SIZE)
+    {
+        queue[(*rear)++] = value;
+    }
+    else
+    {
+        printf("Queue Full\n");
+    }
+}
+
+void delete(int *queue, int *front, int *rear)
+{
+    if (*front < *rear)
+    {
+        printf("Deleted: %d\n", queue[(*front)++]);
+    }
+    else
+    {
+        printf("Queue Empty\n");
+    }
+}
+
+void peek(int *queue, int *front, int *rear)
+{
+    if (*front < *rear)
+    {
+        printf("Front: %d\n", queue[*front]);
+    }
+    else
+    {
+        printf("Queue Empty\n");
+    }
+}
+
+void isEmpty(int *front, int *rear)
+{
+    if (*front == *rear)
+    {
+        printf("Queue Empty\n");
+    }
+    else
+    {
+        printf("Queue Not Empty\n");
+    }
+}
+
+void isFull(int *rear)
+{
+    if (*rear == SIZE)
+    {
+        printf("Queue Full\n");
+    }
+    else
+    {
+        printf("Queue Not Full\n");
+    }
+}
+
+int main()
+{
+    int queue[SIZE];
+    int value, front = 0, rear = 0, choice;
+
+    while (1)
+    {
+        printf("\n1. INSERT\n2. DELETE\n3. PEEK\n4. ISEMPTY\n5. ISFULL\n6. EXIT\nENTER THE OPERATION: ");
+        scanf("%d", &choice);
+
+        switch (choice)
+        {
+        case 1:
+            printf("ENTER THE VALUE: ");
+            scanf("%d", &value);
+            insert(queue, &front, &rear, value);
+            break;
+        case 2:
+            delete (queue, &front, &rear);
+            break;
+        case 3:
+            peek(queue, &front, &rear);
+            break;
+        case 4:
+            isEmpty(&front, &rear);
+            break;
+        case 5:
+            isFull(&rear);
+            break;
+        case 6:
+            return 0;
+        default:
+            printf("Invalid option. Please try again.\n");
+            break;
+        }
+    }
+}</pre>
+    <h2>2. Write a C++ program to open an existing text file and display its contents on the console.</h2>
+    <pre>#include <stdio.h>
+#define SIZE 5
+
+void insert(char *queue, int *front, int *rear, char value)
+{
+    if (*rear < SIZE)
+    {
+        queue[(*rear)++] = value;
+    }
+    else
+    {
+        printf("Queue Full\n");
+    }
+}
+
+void delete(char *queue, int *front, int *rear)
+{
+    if (*front < *rear)
+    {
+        printf("Deleted: %c\n", queue[(*front)++]);
+    }
+    else
+    {
+        printf("Queue Empty\n");
+    }
+}
+
+void peek(char *queue, int *front, int *rear)
+{
+    if (*front < *rear)
+    {
+        printf("Front: %c\n", queue[*front]);
+    }
+    else
+    {
+        printf("Queue Empty\n");
+    }
+}
+
+void isEmpty(int *front, int *rear)
+{
+    if (*front == *rear)
+    {
+        printf("Queue Empty\n");
+    }
+    else
+    {
+        printf("Queue Not Empty\n");
+    }
+}
+
+void isFull(int *rear)
+{
+    if (*rear == SIZE)
+    {
+        printf("Queue Full\n");
+    }
+    else
+    {
+        printf("Queue Not Full\n");
+    }
+}
+
+int main()
+{
+    char queue[SIZE];
+    char value;
+    int front = 0, rear = 0, choice;
+
+    while (1)
+    {
+        printf("\n1. INSERT\n2. DELETE\n3. PEEK\n4. ISEMPTY\n5. ISFULL\n6. EXIT\nENTER THE OPERATION: ");
+        scanf("%d", &choice);
+
+        switch (choice)
+        {
+        case 1:
+            printf("ENTER THE VALUE: ");
+            fflush(stdin);
+            scanf("%c", &value);
+            insert(queue, &front, &rear, value);
+            break;
+        case 2:
+            delete (queue, &front, &rear);
+            break;
+        case 3:
+            peek(queue, &front, &rear);
+            break;
+        case 4:
+            isEmpty(&front, &rear);
+            break;
+        case 5:
+            isFull(&rear);
+            break;
+        case 6:
+            return 0;
+        default:
+            printf("Invalid option. Please try again.\n");
+            break;
+        }
+    }
+}</pre> <h2>3. IMPLEMENT THE OPERATIONS OF QUEUE DYNAMICALLY OF INTEGERS (INSERT, DELETE, PEEK, ISEMPTY, ISFULL).</h2>
+   <pre>#include <stdio.h>
+#include <stdlib.h>
+
+struct node
+{
+    int data;
+    struct node *next;
+};
+
+// Function to check if the queue is empty
+int isEmpty(struct node *front)
+{
+    return front == NULL;
+}
+int isFull()
+{
+    struct node *temp = (struct node *)malloc(sizeof(struct node));
+    return (temp == NULL);
+}
+// Function to insert a new element into the queue
+void insert(struct node **front, struct node **rear, int val)
+{
+    struct node *temp = (struct node *)malloc(sizeof(struct node));
+    if (temp != NULL)
+    {
+        temp->data = val;
+        temp->next = NULL;
+        if (*rear == NULL)
+        { // Queue is empty
+            *front = *rear = temp;
+        }
+        else
+        {
+            (*rear)->next = temp;
+            *rear = temp;
+        }
+    }
+    else
+    {
+        printf("Memory allocation failed\n");
+    }
+}
+
+// Function to delete an element from the queue
+void delete(struct node **front)
+{
+    if (*front != NULL)
+    {
+        struct node *temp = *front;
+        printf("Deleted: %d\n", temp->data);
+        *front = (*front)->next;
+        free(temp);
+    }
+    else
+    {
+        printf("Queue Empty\n");
+    }
+}
+
+// Function to peek at the front element of the queue
+void peek(struct node *front)
+{
+    if (front != NULL)
+    {
+        printf("Front: %d\n", front->data);
+    }
+    else
+    {
+        printf("Queue Empty\n");
+    }
+}
+
+int main()
+{
+    struct node *front = NULL;
+    struct node *rear = NULL;
+    int val, choice;
+
+    while (1)
+    {
+        printf("\n1. INSERT\n2. DELETE\n3. PEEK\n4. ISEMPTY\n5. ISFULL\n6. EXIT\nENTER THE OPERATION: ");
+        scanf("%d", &choice);
+
+        switch (choice)
+        {
+        case 1:
+            printf("ENTER THE VALUE: ");
+            scanf("%d", &val);
+            insert(&front, &rear, val);
+            break;
+        case 2:
+            delete (&front);
+            if (front == NULL)
+                rear = NULL; // Reset rear if queue is empty after deletion
+            break;
+        case 3:
+            peek(front);
+            break;
+        case 4:
+            printf(isEmpty(front) ? "QUEUE IS EMPTY\n" : "QUEUE IS NOT EMPTY\n");
+            break;
+        case 5:
+            printf(isFull() ? "QUEUE IS FULL\n" : "QUEUE IS NOT FULL\n");
+            break;
+        case 6:
+            // Free all remaining nodes before exiting
+            while (!isEmpty(front))
+            {
+                delete (&front);
+            }
+            return 0;
+        default:
+            printf("Invalid option. Please try again.\n");
+            break;
+        }
+    }
+}</pre> <h2>4. IMPLEMENT THE OPERATIONS OF QUEUE DYNAMICALLY OF STRING (INSERT, DELETE, PEEK, ISEMPTY, ISFULL)
+    .</h2>
+  <pre>#include <stdio.h>
+#include <stdlib.h>
+
+struct node
+{
+    char data;
+    struct node *next;
+};
+
+// Function to check if the queue is empty
+int isEmpty(struct node *front)
+{
+    return front == NULL;
+}
+int isFull()
+{
+    struct node *temp = (struct node *)malloc(sizeof(struct node));
+    return (temp == NULL);
+}
+// Function to insert a new element into the queue
+void insert(struct node **front, struct node **rear, char val)
+{
+    struct node *temp = (struct node *)malloc(sizeof(struct node));
+    if (temp != NULL)
+    {
+        temp->data = val;
+        temp->next = NULL;
+        if (*rear == NULL)
+        { // Queue is empty
+            *front = *rear = temp;
+        }
+        else
+        {
+            (*rear)->next = temp;
+            *rear = temp;
+        }
+    }
+    else
+    {
+        printf("Memory allocation failed\n");
+    }
+}
+
+// Function to delete an element from the queue
+void delete(struct node **front)
+{
+    if (*front != NULL)
+    {
+        struct node *temp = *front;
+        printf("Deleted: %c\n", temp->data);
+        *front = (*front)->next;
+        free(temp);
+    }
+    else
+    {
+        printf("Queue Empty\n");
+    }
+}
+
+// Function to peek at the front element of the queue
+void peek(struct node *front)
+{
+    if (front != NULL)
+    {
+        printf("Front: %c\n", front->data);
+    }
+    else
+    {
+        printf("Queue Empty\n");
+    }
+}
+
+int main()
+{
+    struct node *front = NULL;
+    struct node *rear = NULL;
+    int choice;
+    char val;
+
+    while (1)
+    {
+        printf("\n1. INSERT\n2. DELETE\n3. PEEK\n4. ISEMPTY\n5. ISFULL\n6. EXIT\nENTER THE OPERATION: ");
+        scanf("%d", &choice);
+
+        switch (choice)
+        {
+        case 1:
+            printf("ENTER THE VALUE: ");
+            fflush(stdin);
+            scanf("%c", &val);
+            insert(&front, &rear, val);
+            break;
+        case 2:
+            delete (&front);
+            if (front == NULL)
+                rear = NULL; // Reset rear if queue is empty after deletion
+            break;
+        case 3:
+            peek(front);
+            break;
+        case 4:
+            printf(isEmpty(front) ? "QUEUE IS EMPTY\n" : "QUEUE IS NOT EMPTY\n");
+            break;
+        case 5:
+            printf(isFull() ? "QUEUE IS FULL\n" : "QUEUE IS NOT FULL\n");
+            break;
+        case 6:
+            // Free all remaining nodes before exiting
+            while (!isEmpty(front))
+            {
+                delete (&front);
+            }
+            return 0;
+        default:
+            printf("Invalid option. Please try again.\n");
+            break;
+        }
+    }
+}</pre><h2>5. IMPLEMENT THE OPERATIONS OF CIRCULAR QUEUE IN AN INTEGER ARRAY (INSERT, DELETE, PEEK, ISEMPTY, ISFULL).</h2>
+  <pre>#include <stdio.h>
+#define SIZE 5
+
+int queue[SIZE];
+int front = -1;
+int rear = -1;
+
+// Check if the queue is full
+int isFull()
+{
+    return (front == 0 && rear == SIZE - 1) || (front == rear + 1);
+}
+
+// Check if the queue is empty
+int isEmpty()
+{
+    return front == -1;
+}
+
+// Insert an element into the circular queue
+void insert(int value)
+{
+    if (isFull())
+    {
+        printf("Queue Full\n");
+    }
+    else
+    {
+        if (front == -1) // First element being inserted
+            front = 0;
+
+        rear = (rear + 1) % SIZE; // Move rear to the next position
+        queue[rear] = value;
+        printf("Inserted %d\n", value);
+    }
+}
+
+// Delete an element from the circular queue
+void delete()
+{
+    if (isEmpty())
+    {
+        printf("Queue Empty\n");
+    }
+    else
+    {
+        printf("Deleted %d\n", queue[front]);
+
+        if (front == rear)
+        { // Queue becomes empty
+            front = rear = -1;
+        }
+        else
+        {
+            front = (front + 1) % SIZE; // Move front to the next position
+        }
+    }
+}
+
+// Peek at the front element in the circular queue
+void peek()
+{
+    if (isEmpty())
+    {
+        printf("Queue Empty\n");
+    }
+    else
+    {
+        printf("Front: %d\n", queue[front]);
+    }
+}
+
+int main()
+{
+    int choice, value;
+    while (1)
+    {
+        printf("\n1. INSERT\n2. DELETE\n3. PEEK\n4. ISEMPTY\n5. ISFULL\n6. EXIT\nENTER THE OPERATION: ");
+        scanf("%d", &choice);
+
+        switch (choice)
+        {
+        case 1:
+            printf("Enter the value: ");
+            scanf("%d", &value);
+            insert(value);
+            break;
+        case 2:
+            delete ();
+            break;
+        case 3:
+            peek();
+            break;
+        case 4:
+            printf(isEmpty() ? "Queue is Empty\n" : "Queue is Not Empty\n");
+            break;
+        case 5:
+            printf(isFull() ? "Queue is Full\n" : "Queue is Not Full\n");
+            break;
+        case 6:
+            return 0;
+        default:
+            printf("Invalid option. Please try again.\n");
+            break;
+        }
+    }
+}</pre> <h2>6. IMPLEMENT THE OPERATIONS OF CIRCULAR QUEUE IN AN STRING ARRAY (INSERT, DELETE, PEEK, ISEMPTY, ISFULL).</h2>
+  <pre>#include <stdio.h>
+#define size 5
+int isFull(char *queue, int *front, int *rear)
+{
+    if (*rear - *front < size)
+        return 0;
+    else
+        return 1;
+}
+int isEmpty(char *queue, int *front, int *rear)
+{
+    if (*front < *rear)
+        return 0;
+    else
+        return 1;
+}
+void insert(char *queue, int *front, int *rear, char val)
+{
+
+    if (!isFull(queue, front, rear))
+    {
+        queue[((*rear)++) % size] = val;
+    }
+    else
+    {
+        printf("QUEUE FULL\n");
+    }
+}
+void delete(char *queue, int *front, int *rear)
+{
+    if (!(isEmpty(queue, front, rear)))
+    {
+        printf("%c\n", queue[((*front)++) % size]);
+    }
+    else
+    {
+        printf("QUEUE EMPTY\n");
+    }
+}
+void peek(char *queue, int *front, int *rear)
+{
+    if (!(isEmpty(queue, front, rear)))
+    {
+        printf("%c\n", queue[(*front) % size]);
+    }
+    else
+    {
+        printf("QUEUE EMPTY\n");
+    }
+}
+
+int main()
+{
+    char queue[size];
+    char val;
+    int choice = 4, front = 0, rear = 0;
+    while (1)
+    {
+        printf("1.INSERT\n2.DELETE\n3.PEEK\n4.ISEMPTY\n5.ISFULL\n6.EXIT\nENTER CHOICE : ");
+        scanf("%d", &choice);
+        switch (choice)
+        {
+        case 1:
+            printf("ENTER NUMBER : ");
+            scanf(" %c", &val);
+            insert(queue, &front, &rear, val);
+            break;
+        case 2:
+            delete (queue, &front, &rear);
+            break;
+        case 3:
+            peek(queue, &front, &rear);
+            break;
+        case 4:
+            printf("%s", isEmpty(queue, &front, &rear) ? "QUEUE IS EMPTY\n" : "QUEUE IS NOT EMPTY\n");
+            break;
+        case 5:
+            printf("%s", isFull(queue, &front, &rear) ? "QUEUE IS FULL\n" : "QUEUE IS NOT FULL\n");
+            break;
+        case 6:
+            return 0;
+        default:
+            break;
+        }
+    }
+
+    return 1;
+}</pre> <h2>7. IMPLEMENT THE OPERATIONS OF PRIORITY QUEUE IN AN INTEGER ARRAY (INSERT, DELETE, PEEK, ISEMPTY, ISFULL).</h2>
+  <pre>#include <stdio.h>
+#define size 5
+void insert(int queue[size][2], int *front, int *rear, int value, int priority)
+{
+    if ((*front <= *rear) && (*rear != size))
+    {
+        queue[(*rear)][0] = value;
+        queue[(*rear)][1] = priority;
+        int tempData, tempPriority;
+        if ((*front < *rear) && (*front != size))
+        {
+            for (int i = (*rear) - 1; i >= 0; i--)
+            {
+                if (queue[i][1] > priority)
+                {
+                    tempData = queue[i + 1][0];
+                    tempPriority = queue[i + 1][1];
+                    queue[i + 1][0] = queue[(*rear)][0];
+                    queue[i + 1][1] = queue[(*rear)][1];
+                    queue[(*rear)][0] = tempData;
+                    queue[(*rear)][1] = tempPriority;
+                    break;
+                }
+                else if (i == 0)
+                {
+                }
+            }
+        }
+        (*rear)++;
+    }
+    else
+    {
+        printf("Queue Full\n");
+    }
+}
+void delete(int queue[size][2], int *front, int *rear)
+{
+    if ((*front < *rear) && (*front != size))
+    {
+        printf("%d\n", queue[(*front)++][0]);
+    }
+    else
+    {
+        printf("Queue Empty\n");
+    }
+}
+void peek(int queue[size][2], int *front, int *rear)
+{
+    if ((*front < *rear) && (*front != size))
+    {
+        printf("%d\n", queue[*front][0]);
+    }
+    else
+    {
+        printf("Queue Empty\n");
+    }
+}
+void isEmpty(int queue[size][2], int *front, int *rear)
+{
+    if ((*front < *rear) && (*front != size))
+    {
+        printf("Queue Not Empty\n");
+    }
+    else
+    {
+        printf("Queue Empty\n");
+    }
+}
+void isFull(int queue[size][2], int *front, int *rear)
+{
+    if ((*front <= *rear) && (*rear != size))
+    {
+        printf("Queue Not Full\n");
+    }
+    else
+    {
+        printf("Queue Full\n");
+    }
+}
+int main()
+{
+    int queue[size][2];
+    int value, priority, front = 0, rear = 0, choice;
+    while (1)
+    {
+        printf("\n1.INSERT\n2.DELETE\n3.PEEK\n4.ISEMPTY\n5.ISFULL\n6.EXIT\nENTER THE OPERATION: ");
+        scanf("%d", &choice);
+        switch (choice)
+        {
+        case 1:
+            printf("ENTER THE VALUE: ");
+            scanf("%d", &value);
+            printf("ENTER THE PRIORITY (HIGHEST 5 -> LOWEST 1): ");
+            scanf("%d", &priority);
+            insert(queue, &front, &rear, value, priority);
+            break;
+        case 2:
+            delete (queue, &front, &rear);
+            break;
+        case 3:
+            peek(queue, &front, &rear);
+            break;
+        case 4:
+            isEmpty(queue, &front, &rear);
+            break;
+        case 5:
+            isFull(queue, &front, &rear);
+            break;
+        case 6:
+            return 0;
+        default:
+            break;
+        }
+    }
+}</pre><h2>8.  IMPLEMENT THE OPERATIONS OF PRIORITY QUEUE IN AN STRING ARRAY (INSERT, DELETE, PEEK, ISEMPTY, ISFULL).</h2>
+   <pre>#include <stdio.h>
+#include <string.h>
+#define SIZE 5
+
+// Insert a character into the priority queue
+int insert(char queue[], int priority[], int *count, char value, int prio)
+{
+    if (*count == SIZE)
+    {
+        printf("Queue Full\n");
+        return 0;
+    }
+
+    // Check if the priority already exists in the queue
+    for (int j = 0; j < *count; j++)
+    {
+        if (priority[j] == prio)
+        {
+            printf("Priority %d already exists. Choose a different priority.\n", prio);
+            return 0;
+        }
+    }
+
+    // Find the position to insert the new element based on priority
+    int i;
+    for (i = *count - 1; i >= 0 && priority[i] < prio; i--)
+    {
+        queue[i + 1] = queue[i];
+        priority[i + 1] = priority[i];
+    }
+
+    // Insert the new element at the found position
+    queue[i + 1] = value;
+    priority[i + 1] = prio;
+    (*count)++;
+
+    printf("Inserted: %c with priority %d\n", value, prio);
+    return 1;
+}
+
+// Delete the element with the highest priority from the queue
+void delete(char queue[], int priority[], int *count)
+{
+    if (*count == 0)
+    {
+        printf("Queue Empty\n");
+    }
+    else
+    {
+        printf("Deleted: %c with priority %d\n", queue[0], priority[0]);
+
+        // Shift elements to the left after deletion
+        for (int i = 0; i < *count - 1; i++)
+        {
+            queue[i] = queue[i + 1];
+            priority[i] = priority[i + 1];
+        }
+        (*count)--;
+    }
+}
+
+// Peek at the element with the highest priority
+void peek(char queue[], int priority[], int count)
+{
+    if (count == 0)
+    {
+        printf("Queue Empty\n");
+    }
+    else
+    {
+        printf("Peek: %c with priority %d\n", queue[0], priority[0]);
+    }
+}
+
+// Check if the queue is empty
+void isEmpty(int count)
+{
+    printf(count == 0 ? "Queue is Empty\n" : "Queue is Not Empty\n");
+}
+
+// Check if the queue is full
+void isFull(int count)
+{
+    printf(count == SIZE ? "Queue is Full\n" : "Queue is Not Full\n");
+}
+
+int main()
+{
+    char queue[SIZE];
+    int priority[SIZE];
+    int count = 0;
+
+    int choice, prio;
+    char value;
+
+    while (1)
+    {
+        printf("\n1. INSERT\n2. DELETE\n3. PEEK\n4. ISEMPTY\n5. ISFULL\n6. EXIT\nENTER THE OPERATION: ");
+        scanf("%d", &choice);
+
+        switch (choice)
+        {
+        case 1:
+            if (count == SIZE)
+            {
+                printf("Queue Full\n");
+                break;
+            }
+            printf("Enter the character: ");
+            scanf(" %c", &value);
+            printf("Enter the priority: ");
+            scanf("%d", &prio);
+            insert(queue, priority, &count, value, prio);
+            break;
+        case 2:
+            delete (queue, priority, &count);
+            break;
+        case 3:
+            peek(queue, priority, count);
+            break;
+        case 4:
+            isEmpty(count);
+            break;
+        case 5:
+            isFull(count);
+            break;
+        case 6:
+            return 0;
+        default:
+            printf("Invalid option. Please try again.\n");
+            break;
+        }
+    }
+}</pre><h2>9.IMPLEMENT THE OPERATIONS OF DOUBLE ENDED QUEUE IN AN INTEGER ARRAY (INSERT, DELETE, PEEK, ISEMPTY, ISFULL).</h2>
+ <pre>#include <stdio.h>
+#define SIZE 5
+
+// Structure to represent the deque
+struct Deque
+{
+    int arr[SIZE];
+    int front;
+    int rear;
+    int count;
+};
+
+// Initialize the deque
+void initDeque(struct Deque *deque)
+{
+    deque->front = -1;
+    deque->rear = 0;
+    deque->count = 0;
+}
+
+// Check if deque is full
+int isFull(struct Deque *deque)
+{
+    return deque->count == SIZE;
+}
+
+// Check if deque is empty
+int isEmpty(struct Deque *deque)
+{
+    return deque->count == 0;
+}
+
+// Insert an element at the front of the deque
+void insertFront(struct Deque *deque, int value)
+{
+    if (isFull(deque))
+    {
+        printf("Deque is Full\n");
+        return;
+    }
+
+    if (deque->front == -1)
+    { // First insertion
+        deque->front = deque->rear = 0;
+    }
+    else if (deque->front == 0)
+    {
+        deque->front = SIZE - 1;
+    }
+    else
+    {
+        deque->front--;
+    }
+
+    deque->arr[deque->front] = value;
+    deque->count++;
+    printf("Inserted %d at front\n", value);
+}
+
+// Insert an element at the rear of the deque
+void insertRear(struct Deque *deque, int value)
+{
+    if (isFull(deque))
+    {
+        printf("Deque is Full\n");
+        return;
+    }
+
+    if (deque->front == -1)
+    { // First insertion
+        deque->front = deque->rear = 0;
+    }
+    else if (deque->rear == SIZE - 1)
+    {
+        deque->rear = 0;
+    }
+    else
+    {
+        deque->rear++;
+    }
+
+    deque->arr[deque->rear] = value;
+    deque->count++;
+    printf("Inserted %d at rear\n", value);
+}
+
+// Delete an element from the front of the deque
+void deleteFront(struct Deque *deque)
+{
+    if (isEmpty(deque))
+    {
+        printf("Deque is Empty\n");
+        return;
+    }
+
+    printf("Deleted %d from front\n", deque->arr[deque->front]);
+
+    if (deque->front == deque->rear)
+    { // Single element
+        deque->front = deque->rear = -1;
+    }
+    else if (deque->front == SIZE - 1)
+    {
+        deque->front = 0;
+    }
+    else
+    {
+        deque->front++;
+    }
+
+    deque->count--;
+}
+
+// Delete an element from the rear of the deque
+void deleteRear(struct Deque *deque)
+{
+    if (isEmpty(deque))
+    {
+        printf("Deque is Empty\n");
+        return;
+    }
+
+    printf("Deleted %d from rear\n", deque->arr[deque->rear]);
+
+    if (deque->front == deque->rear)
+    { // Single element
+        deque->front = deque->rear = -1;
+    }
+    else if (deque->rear == 0)
+    {
+        deque->rear = SIZE - 1;
+    }
+    else
+    {
+        deque->rear--;
+    }
+
+    deque->count--;
+}
+
+// Peek at the front element of the deque
+void peekFront(struct Deque *deque)
+{
+    if (isEmpty(deque))
+    {
+        printf("Deque is Empty\n");
+    }
+    else
+    {
+        printf("Front Element: %d\n", deque->arr[deque->front]);
+    }
+}
+
+// Peek at the rear element of the deque
+void peekRear(struct Deque *deque)
+{
+    if (isEmpty(deque))
+    {
+        printf("Deque is Empty\n");
+    }
+    else
+    {
+        printf("Rear Element: %d\n", deque->arr[deque->rear]);
+    }
+}
+
+int main()
+{
+    struct Deque deque;
+    initDeque(&deque);
+
+    int choice, value;
+
+    while (1)
+    {
+        printf("\n1. Insert Front\n2. Insert Rear\n3. Delete Front\n4. Delete Rear\n5. Peek Front\n6. Peek Rear\n7. IsEmpty\n8. IsFull\n9. Exit\nChoose an option: ");
+        scanf("%d", &choice);
+
+        switch (choice)
+        {
+        case 1:
+            printf("Enter value to insert at front: ");
+            scanf("%d", &value);
+            insertFront(&deque, value);
+            break;
+        case 2:
+            printf("Enter value to insert at rear: ");
+            scanf("%d", &value);
+            insertRear(&deque, value);
+            break;
+        case 3:
+            deleteFront(&deque);
+            break;
+        case 4:
+            deleteRear(&deque);
+            break;
+        case 5:
+            peekFront(&deque);
+            break;
+        case 6:
+            peekRear(&deque);
+            break;
+        case 7:
+            printf(isEmpty(&deque) ? "Deque is Empty\n" : "Deque is Not Empty\n");
+            break;
+        case 8:
+            printf(isFull(&deque) ? "Deque is Full\n" : "Deque is Not Full\n");
+            break;
+        case 9:
+            return 0;
+        default:
+            printf("Invalid option. Try again.\n");
+            break;
+        }
+    }
+
+    return 0;
+}</pre> <h2>10.  IMPLEMENT THE OPERATIONS OF DOUBLE ENDED QUEUE IN AN STRING ARRAY (INSERT, DELETE, PEEK, ISEMPTY, ISFULL).</h2>
+   <pre>include <stdio.h>
+#define SIZE 5
+
+// Structure to represent the deque
+struct Deque
+{
+    char arr[SIZE];
+    int front;
+    int rear;
+    int count;
+};
+
+// Initialize the deque
+void initDeque(struct Deque *deque)
+{
+    deque->front = -1;
+    deque->rear = 0;
+    deque->count = 0;
+}
+
+// Check if deque is full
+int isFull(struct Deque *deque)
+{
+    return deque->count == SIZE;
+}
+
+// Check if deque is empty
+int isEmpty(struct Deque *deque)
+{
+    return deque->count == 0;
+}
+
+// Insert a character at the front of the deque
+void insertFront(struct Deque *deque, char value)
+{
+    if (isFull(deque))
+    {
+        printf("Deque is Full\n");
+        return;
+    }
+
+    if (deque->front == -1)
+    { // First insertion
+        deque->front = deque->rear = 0;
+    }
+    else if (deque->front == 0)
+    {
+        deque->front = SIZE - 1;
+    }
+    else
+    {
+        deque->front--;
+    }
+
+    deque->arr[deque->front] = value;
+    deque->count++;
+    printf("Inserted %c at front\n", value);
+}
+
+// Insert a character at the rear of the deque
+void insertRear(struct Deque *deque, char value)
+{
+    if (isFull(deque))
+    {
+        printf("Deque is Full\n");
+        return;
+    }
+
+    if (deque->front == -1)
+    { // First insertion
+        deque->front = deque->rear = 0;
+    }
+    else if (deque->rear == SIZE - 1)
+    {
+        deque->rear = 0;
+    }
+    else
+    {
+        deque->rear++;
+    }
+
+    deque->arr[deque->rear] = value;
+    deque->count++;
+    printf("Inserted %c at rear\n", value);
+}
+
+// Delete a character from the front of the deque
+void deleteFront(struct Deque *deque)
+{
+    if (isEmpty(deque))
+    {
+        printf("Deque is Empty\n");
+        return;
+    }
+
+    printf("Deleted %c from front\n", deque->arr[deque->front]);
+
+    if (deque->front == deque->rear)
+    { // Single element
+        deque->front = deque->rear = -1;
+    }
+    else if (deque->front == SIZE - 1)
+    {
+        deque->front = 0;
+    }
+    else
+    {
+        deque->front++;
+    }
+
+    deque->count--;
+}
+
+// Delete a character from the rear of the deque
+void deleteRear(struct Deque *deque)
+{
+    if (isEmpty(deque))
+    {
+        printf("Deque is Empty\n");
+        return;
+    }
+
+    printf("Deleted %c from rear\n", deque->arr[deque->rear]);
+
+    if (deque->front == deque->rear)
+    { // Single element
+        deque->front = deque->rear = -1;
+    }
+    else if (deque->rear == 0)
+    {
+        deque->rear = SIZE - 1;
+    }
+    else
+    {
+        deque->rear--;
+    }
+
+    deque->count--;
+}
+
+// Peek at the character at the front of the deque
+void peekFront(struct Deque *deque)
+{
+    if (isEmpty(deque))
+    {
+        printf("Deque is Empty\n");
+    }
+    else
+    {
+        printf("Front Element: %c\n", deque->arr[deque->front]);
+    }
+}
+
+// Peek at the character at the rear of the deque
+void peekRear(struct Deque *deque)
+{
+    if (isEmpty(deque))
+    {
+        printf("Deque is Empty\n");
+    }
+    else
+    {
+        printf("Rear Element: %c\n", deque->arr[deque->rear]);
+    }
+}
+
+int main()
+{
+    struct Deque deque;
+    initDeque(&deque);
+
+    int choice;
+    char value;
+
+    while (1)
+    {
+        printf("\n1. Insert Front\n2. Insert Rear\n3. Delete Front\n4. Delete Rear\n5. Peek Front\n6. Peek Rear\n7. IsEmpty\n8. IsFull\n9. Exit\nChoose an option: ");
+        scanf("%d", &choice);
+
+        switch (choice)
+        {
+        case 1:
+            printf("Enter character to insert at front: ");
+            fflush(stdin);
+            scanf("%c", &value);
+            insertFront(&deque, value);
+            break;
+        case 2:
+            printf("Enter character to insert at rear: ");
+            fflush(stdin);
+            scanf("%c", &value);
+            insertRear(&deque, value);
+            break;
+        case 3:
+            deleteFront(&deque);
+            break;
+        case 4:
+            deleteRear(&deque);
+            break;
+        case 5:
+            peekFront(&deque);
+            break;
+        case 6:
+            peekRear(&deque);
+            break;
+        case 7:
+            printf(isEmpty(&deque) ? "Deque is Empty\n" : "Deque is Not Empty\n");
+            break;
+        case 8:
+            printf(isFull(&deque) ? "Deque is Full\n" : "Deque is Not Full\n");
+            break;
+        case 9:
+            return 0;
+        default:
+            printf("Invalid option. Try again.\n");
+            break;
+        }
+    }
+
+    return 0;
+}
+
+        </pre>`,
+
+        "Functions": `<h1>Recursion</h1>
+    <div class="code">
+        <div>
+          <h2 name="code1">1.CALCULATE FACTORIAL OF A NUMBER USING RECURSION</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+  <pre>#include <stdio.h>
+int factorial(int i)
+{
+    if (i > 1)
+    {
+        return i * factorial(i - 1);
+    }
+    return 1;
+}
+int main()
+{
+    int num;
+    printf("ENTER A NUMBER : ");
+    scanf("%d", &num);
+    printf("FACTORIAL OF %d : %d", num, factorial(num));
+    return 0;
+}
+</pre>    </div>
+
+      <div class="code">
+        <div>
+          <h2 name="code2">2. CALCULATE FIBONACCI OF A NUMBER USING RECURSION</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>#include&lt;iostream>
+            #include <stdio.h>
+int fibonacci(int i, int j, int size)
+{
+    if (size >= 1)
+    {
+        printf("%d ", i);
+        return fibonacci(j, i + j, size - 1);
+    }
+    return 1;
+}
+int main()
+{
+    int i, j, len;
+    printf("ENTER LENGTH OF FIBONACCI : ");
+    scanf("%d", &len);
+    printf("ENTER FIRST NUMBER : ");
+    scanf("%d", &i);
+    printf("ENTER FIRST NUMBER : ");
+    scanf("%d", &j);
+    fibonacci(i, j, len);
+    return 0;
+}
+            </pre>
+        </div>
+        
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code3">3.CALCULATE THE SUM OF NATURAL NUMBERS TILL 10 USING RECURSION.
+</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>#include <stdio.h>
+int sum(int i)
+{
+    if (i > 0)
+    {
+        return i + sum(i - 1);
+    }
+    return 0;
+}
+int main()
+{
+    printf("SUM OF FIRST 10 NATURAL NUMBERS : %d", sum(10));
+    return 0;
+}
+
+            </pre>
+        </div>
+    
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code4">4. CONVERT A NUMBER INTO BINARY USING RECURSION.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>#include <stdio.h>
+int binary(int num)
+{
+    if ((num / 2) > 0)
+    {
+        return (num % 2) + (binary(num / 2) * 10);
+    }
+    return 1;
+}
+int main()
+{
+    int num;
+    printf("ENTER A NUMBER : ");
+    scanf("%d", &num);
+    printf("BINARY OF %d : %d", num, binary(num));
+    return 0;
+}
+            </pre>
+        </div>
+        
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code5">5. FIND THE LARGEST ELEMENT IN THE INTEGER ARRAY USING RECURSION</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+     <pre>#include <stdio.h>
+#define arrSize 100
+int largest(int *arr, int large, int curr, int size)
+{
+
+    if (arr[curr] > arr[large])
+    {
+        large = curr;
+    }
+    if (curr < (size - 1))
+    {
+        return largest(arr, large, curr + 1, size);
+    }
+    return arr[large];
+}
+int main()
+{
+    int arr[arrSize];
+    int size;
+    printf("ENTER ARRAY SIZE : ");
+    scanf("%d", &size);
+    for (int i = 0; i < size; i++)
+    {
+        printf("ENTER ARRAY ELEMENT : ");
+        scanf("%d", &arr[i]);
+    }
+    printf("THE LARGEST ELEMENT IN ARRAY : %d", largest(arr, 0, 0, size));
+
+    return 0;
+}</pre>  </div>
+        <div>
+          <h2>output</h2>
+          <pre>Enter the number : 122
+            No. of digits with value 2 : 2</pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code6">6.  Write a C++ method that accepts three integers and checks whether they are consecutive or not.
+             Returns true or false.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+            #include&lt;iostream>
+                using namespace std;
+                int connch(int a,int b,int c){
+                  if(abs(a-b)==1 && abs(a-c)==2){
+                      return true;
+                  }
+                  else if(abs(a-c)==1 && abs(a-b)==2){
+                     return true;
+                  }
+                  else if(abs(c-b)==1 && abs(c-a)==2){
+                    return true;
+                  }
+                  else if(abs(c-b)==2 && abs(c-a)==1){
+                    return true;
+                  }
+                  else{
+                    return false;
+                  }
+                }
+                int main(){
+                    int n1,n2,n3;
+                    cout<<"Enter the three numbers A,B and C: ";
+                    cin>>n1>>n2>>n3;
+                    cout<<"Consecutive (0:false and 1:True): "<< connch(n1,n2,n3); 
+                    return 0;}
+                
+          </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>Enter the three numbers A,B and C: 19
+            17
+            18
+            Consecutive (0:false and 1:True): 1
+            </pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code7">7. Write a C++ method that checks whether all the characters in a given string are vowels (a,e,i,o,u) or not.
+             Return true if each character in the string is a vowel, otherwise return false.
+
+          </h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>#include&lt;iostream>
+            #include&lt;string>
+            using namespace std;
+            int voch(string st){
+               int c=0;
+               for(int i=0;i< st.length();i++){
+                  if(st[i]=='a' || st[i]=='e' || st[i]=='i' || st[i]=='o' || st[i]=='u'){
+                    c=0;
+                  }
+                  else{
+                    c=1;
+                    break;
+                  }
+               }
+               if(c==0){
+                return true;
+               }
+               else{
+                return false;
+               }
+            }
+            int main(){
+                string s;
+                cout<<"Enter the string : ";
+                cin>>s;
+                cout<<"All character of string are vowels (0:false and 1:True): "<< voch(s); 
+                return 0;}
+            </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>Enter the string : black
+            All character of string are vowels (0:false and 1:True): 0
+            </pre>
+        </div>
+      </div>`,
+      
+        "Inheritance": `<h1>Search</h1>
+    <div class="code">
+        <div>
+          <h2 name="code1">	ENTER A INTEGER ARRAY FROM THE USER, ENTER AN INTEGER VALUE AND PERFORM LINEAR SEARCH ALGORITHM THROUGH ITERATION..</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+    <pre>#include <stdio.h>
+#define maxSize 100
+int linearSearch(int arr[], int size, int ele)
+{
+    for (int i = 0; i < size; i++)
+    {
+        if (arr[i] == ele)
+        {
+            return i;
+        }
+    }
+    return -1;
+}
+int main()
+{
+    int arr[maxSize];
+    int size;
+    int search;
+    int result;
+    printf("ENTER SIZE OF ARRAY : ");
+    scanf("%d", &size);
+    for (int i = 0; i < size; i++)
+    {
+        printf("ENTER ELEMENT %d : ", i);
+        scanf("%d", &arr[i]);
+    }
+    printf("ENTER ELEMENT TO BE SEARCHED : ");
+    scanf("%d", &search);
+    result = linearSearch(arr, size, search);
+    if (result >= 0)
+    {
+        printf("ELEMENT FOUND AT INDEX %d", result);
+    }
+    else
+    {
+        printf("ELEMENT NOT FOUND");
+    }
+    return 0;
+}</pre> </div>
+        <div>
+          <h2>output</h2>
+          <pre>Animal makes sound.
+            Cat barks.</pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code2">2.   ENTER A STRING FROM THE USER, ENTER A CHARACTER AND PERFORM LINEAR SEARCH ALGORITHM THROUGH RECURSION.
+        </h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+       <pre>#include <stdio.h>
+#define maxSize 100
+int linearSearch(char arr[], int size, char ele, int index)
+{
+    if (arr[index] == ele)
+    {
+        return index;
+    }
+    else if (index == size)
+    {
+        return -1;
+    }
+    else
+    {
+        linearSearch(arr, size, ele, index + 1);
+    }
+}
+int main()
+{
+    char arr[maxSize];
+    int size;
+    char search;
+    char result;
+    printf("ENTER SIZE OF ARRAY : ");
+    scanf("%d", &size);
+    fflush(stdin);
+    for (int i = 0; i < size; i++)
+    {
+        printf("ENTER ELEMENT %d : ", i);
+        scanf("%c", &arr[i]);
+        fflush(stdin);
+    }
+    printf("ENTER ELEMENT TO BE SEARCHED : ");
+    scanf("%c", &search);
+    result = linearSearch(arr, size, search, 0);
+    if (result >= 0)
+    {
+        printf("ELEMENT FOUND AT INDEX %d", result);
+    }
+    else
+    {
+        printf("ELEMENT NOT FOUND");
+    }
+    return 0;
+}</pre> </div>
+        
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code3">3.ENTER A INTEGER ARRAY FROM THE USER, ENTER AN INTEGER VALUE AND PERFORM LINEAR SEARCH ALGORITHM THROUGH RECURSION. .</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+       <pre>#include <stdio.h>
+#define maxSize 100
+int linearSearch(int arr[], int size, int ele, int index)
+{
+    if (arr[index] == ele)
+    {
+        return index;
+    }
+    else if (index == size)
+    {
+        return -1;
+    }
+    else
+    {
+        linearSearch(arr, size, ele, index + 1);
+    }
+}
+int main()
+{
+    int arr[maxSize];
+    int size;
+    int search;
+    int result;
+    printf("ENTER SIZE OF ARRAY : ");
+    scanf("%d", &size);
+    for (int i = 0; i < size; i++)
+    {
+        printf("ENTER ELEMENT %d : ", i);
+        scanf("%d", &arr[i]);
+    }
+    printf("ENTER ELEMENT TO BE SEARCHED : ");
+    scanf("%d", &search);
+    result = linearSearch(arr, size, search, 0);
+    if (result >= 0)
+    {
+        printf("ELEMENT FOUND AT INDEX %d", result);
+    }
+    else
+    {
+        printf("ELEMENT NOT FOUND");
+    }
+    return 0;
+}
+        </pre>  </div>
+        <div>
+          <h2>output</h2>
+          <pre>Enter sides:12 2
+            Area of rectangle:24</pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code4">4 ENTER A STRING FROM THE USER, ENTER A CHARACTER AND PERFORM LINEAR SEARCH ALGORITHM THROUGH ITERATION.
+        </h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+         <pre>#include <stdio.h>
+#define maxSize 100
+int linearSearch(char arr[], int size, char ele)
+{
+    for (int i = 0; i < size; i++)
+    {
+        if (arr[i] == ele)
+        {
+            return i;
+        }
+    }
+    return -1;
+}
+int main()
+{
+    char arr[maxSize];
+    int size;
+    char search;
+    char result;
+    printf("ENTER SIZE OF ARRAY : ");
+    scanf("%d", &size);
+    fflush(stdin);
+    for (int i = 0; i < size; i++)
+    {
+        printf("ENTER ELEMENT %d : ", i);
+        scanf("%c", &arr[i]);
+        fflush(stdin);
+    }
+    printf("ENTER ELEMENT TO BE SEARCHED : ");
+    scanf("%c", &search);
+    result = linearSearch(arr, size, search);
+    if (result >= 0)
+    {
+        printf("ELEMENT FOUND AT INDEX %d", result);
+    }
+    else
+    {
+        printf("ELEMENT NOT FOUND");
+    }
+    return 0;
+}</pre> </div>
+       
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code5">5.ENTER A INTEGER ARRAY FROM THE USER, ENTER AN INTEGER VALUE AND PERFORM BINARY SEARCH ALGORITHM THROUGH ITERATION.
+            </h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>#include&lt;iostream>
+            using namespace std;
+            class BankAccount
+            {
+                public:
+                    BankAccount()
+                    {
+                        balance=0;
+                    }
+                    float money;
+                    float balance;
+                    void deposit()
+                    {
+                        cout&lt;&lt;"Input amount:";
+                        cin>>money;
+                        balance=balance+money;
+                        cout&lt;&lt;"Deposited "&lt;&lt;money&lt;&lt;" Successfully!"&lt;&lt;endl;
+                        cout&lt;&lt;"Current balance:"&lt;&lt;balance&lt;&lt;endl;
+                    }
+                    void withdraw()
+                    {
+                        cout&lt;&lt;"Input amount:";
+                        cin>>money;
+                        balance=balance-money;
+                        cout&lt;&lt;"Withdrawed "&lt;&lt;money&lt;&lt;" Successfully!"&lt;&lt;endl;
+                        cout&lt;&lt;"Current balance:"&lt;&lt;balance&lt;&lt;endl;
+                    }
+            };
+            class savingsaccount:public BankAccount
+            {
+                public:
+                    void withdraw()
+                    {
+                        int money;
+                        cout&lt;&lt;"Input amount:";
+                        cin>>money;
+                        if(balance>100)
+                        {
+                            balance=balance-money;
+                            cout&lt;&lt;"Withdrawed "&lt;&lt;money&lt;&lt;" Successfully!"&lt;&lt;endl;
+                            cout&lt;&lt;"Current balance:"&lt;&lt;balance&lt;&lt;endl;
+                        }
+                        else
+                        {
+                            cout&lt;&lt;"Can't Withdraw Balance less than 100"&lt;&lt;endl;
+                            cout&lt;&lt;"Current balance:"&lt;&lt;balance&lt;&lt;endl;
+                        }
+                    }
+            };
+            int main()
+            {
+                savingsaccount s1;
+                int x;
+                int end;
+                for(int i=0;end!=0;i++)
+                {
+                    cout&lt;&lt;"Select Operation:-\n"&lt;&lt;"1.Deposit 2.Withdrawal :";
+                    cin>>x;
+                    switch(x)
+                    {
+                        case 1: s1.deposit();
+                                break;
+                        case 2: s1.withdraw();
+                                break;
+                        default: cout&lt;&lt;"Invalid Operation!";
+                                break;
+                    }
+                    cout&lt;&lt;"Enter 0 to exit or any other to continue:";
+                    cin>>end;
+                }
+            }
+            </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>Select Operation:-
+            1.Deposit 2.Withdrawal :1
+            Input amount:1000
+            Deposited 1000 Successfully!
+            Current balance:1000
+            Enter 0 to exit or any other to continue:1
+            Select Operation:-
+            1.Deposit 2.Withdrawal :2
+            Input amount:950
+            Withdrawed 950 Successfully!
+            Current balance:50
+            Enter 0 to exit or any other to continue:1
+            Select Operation:-
+            1.Deposit 2.Withdrawal :2
+            Input amount:50
+            Can't Withdraw Balance less than 100
+            Current balance:50
+            Enter 0 to exit or any other to continue:0</pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code6">6. Write a C++ program to create a class called Animal with a method named move(). Create a derived 
+            class called Cheetah that overrides the move() method to run.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>#include&lt;iostream>
+            using namespace std;
+            class animal
+            {
+                public:
+                    void move()
+                    {
+                        cout&lt;&lt;"Animal moves."&lt;&lt;endl;
+                    }
+            };
+            class cheetah:public animal
+            {
+                public:
+                    void move()
+                    {
+                        cout&lt;&lt;"Cheetah Runs.";
+                    }
+            };
+            int main()
+            {
+                animal a1;
+                cheetah c1;
+                a1.move();
+                c1.move();
+            }
+            </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>Animal moves.
+            Cheetah Runs.</pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code7">7 ENTER A STRING FROM THE USER, ENTER A CHARACTER AND PERFORM BINARY SEARCH ALGORITHM THROUGH RECURSION.
+        </h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>#include&lt;iostream>
+            using namespace std;
+            class person
+            {
+                public:
+                    char fname[20];
+                    char lname[20];
+                    void firstname()
+                    {
+                        cout&lt;&lt;"Enter your first name:";
+                        cin>>fname;
+                    }
+                    void lastname()
+                    {
+                        cout&lt;&lt;"Enter your last name:";
+                        cin>>lname;
+                    }
+            };
+            class employee:public person
+            {
+                public:
+                    int employeeid;
+                    char title[50];
+                    void getempid()
+                    {
+                        cout&lt;&lt;"Enter employeeid:";
+                        cin>>employeeid;
+                    }
+                    void lastname()
+                    {
+                        cout&lt;&lt;"Enter job title:";
+                        cin>>title;
+                    }
+                    void display()
+                    {
+                        cout&lt;&lt;"***************************"&lt;&lt;endl;
+                        cout&lt;&lt;"First name:"&lt;&lt;fname&lt;&lt;endl;
+                        cout&lt;&lt;"Last name:"&lt;&lt;lname&lt;&lt;endl;
+                        cout&lt;&lt;"Employee id:"&lt;&lt;employeeid&lt;&lt;endl;
+                        cout&lt;&lt;"Job Title:"&lt;&lt;title&lt;&lt;endl;
+                    }
+            };
+            int main()
+            {
+                person p1;
+                employee e1;
+                e1.firstname();
+                p1.lastname();
+                e1.lastname();
+                e1.getempid();
+                e1.display();
+            }
+            </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>Enter your first name:Rohit
+            Enter your last name:Garg
+            Enter job title:Web_Developer
+            Enter employeeid:3534
+            ***************************
+            First name:Rohit
+            Last name:
+            Employee id:3534
+            Job Title:Web_Developer</pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code8">8. CALCULATE THE BEST AND WORST COMPLEXITY OF THE BINARY SEARCHING ALGORITHM WITH EXACT TIME TAKEN BY THE ALGORITHM ON INTEGER ARRAY.
+        </h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>#include&lt;iostream>
+            #define pi 3.14
+            using namespace std;
+            class shape
+            {
+                public:
+                    float length,breadth,perimeter,area;
+                    void getperimeter()
+                    {
+                        cout&lt;&lt;"Enter length and breadth:";
+                        cin>>length>>breadth;
+                        perimeter=2.0*(length+breadth);
+                        cout&lt;&lt;"Perimeter:"&lt;&lt;perimeter&lt;&lt;endl;
+                    }
+                    void getarea()
+                    {
+                        cout&lt;&lt;"Enter length and breadth:";
+                        cin>>length>>breadth;
+                        area=length*breadth;
+                        cout&lt;&lt;"Area:"&lt;&lt;area&lt;&lt;endl;
+                    }
+            };
+            class circle:public shape
+            {
+                public:
+                    float r;
+                    void getperimeter()
+                    {
+                        cout&lt;&lt;"Enter radius:";
+                        cin>>r;
+                        perimeter=2.0*pi*r;
+                        cout&lt;&lt;"Perimeter:"&lt;&lt;perimeter&lt;&lt;endl;
+                    }
+                    void getarea()
+                    {
+                        cout&lt;&lt;"Enter radius:";
+                        cin>>r;
+                        area=pi*r*r;
+                        cout&lt;&lt;"Area:"&lt;&lt;area&lt;&lt;endl;
+                    }
+            };
+            int main()
+            {
+                shape s1;
+                circle c1;
+                s1.getperimeter();
+                s1.getarea();
+                c1.getperimeter();
+                c1.getarea();
+            }</pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>Enter length and breadth:10 5
+            Perimeter:30
+            Enter length and breadth:10 5
+            Area:50
+            Enter radius:12
+            Perimeter:75.36
+            Enter radius:12
+            Area:452.16
+            </pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code9">9. Write a C++ program to create a vehicle class hierarchy. The base class should be Vehicle, 
+            with derived classes Truck, Car and Motorcycle. Each derived class should have properties such as 
+            make, model, year, and fuel type. Implement methods for calculating fuel efficiency, distance 
+            traveled, and maximum speed</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+            #include&lt;iostream>
+              using namespace std;
+              
+              class vehicle {
+              public:
+                  vehicle() {
+                      totaldistance = 0;
+                  }
+                  char make[50], fueltype[50], model[50];
+                  int year;
+                  float totaldistance, kilometersDriven, litersUsed, fuelEfficiency, maxspd;
+              
+                  virtual void fuelefficiency() {
+                      cout&lt;&lt; "Enter the number of kilometers driven: ";
+                      cin >> kilometersDriven;
+                      cout&lt;&lt; "Enter the liters of fuel used: ";
+                      cin >> litersUsed;
+                      fuelEfficiency = kilometersDriven / litersUsed;
+                      cout&lt;&lt; "Fuel efficiency: "&lt;&lt; fuelEfficiency&lt;&lt; " km/L"&lt;&lt; endl;
+                  }
+              
+                  void distancetravelled() {
+                      float distance;
+                      cout&lt;&lt; "Input distance: ";
+                      cin >> distance;
+                      totaldistance += distance;
+                  }
+              
+                  void maxspeed() {
+                      cout&lt;&lt; "Input maximum speed: ";
+                      cin >> maxspd;
+                  }
+              };
+              
+              class truck : public vehicle {
+              public:
+                  void get() {
+                      cout&lt;&lt; "Enter material used in building of vehicle: ";
+                      cin >> make;
+                      cout&lt;&lt; "Enter model of the vehicle: ";
+                      cin >> model;
+                      cout&lt;&lt; "Enter year: ";
+                      cin >> year;
+                      cout&lt;&lt; "Enter fuel type: ";
+                      cin >> fueltype;
+                  }
+              
+                  void display() {
+                      cout&lt;&lt; "*************************************"&lt;&lt; endl;
+                      cout&lt;&lt; "Model: "&lt;&lt; model&lt;&lt; endl;
+                      cout&lt;&lt; "Material used: "&lt;&lt; make&lt;&lt; endl;
+                      cout&lt;&lt; "Fuel type: "&lt;&lt; fueltype&lt;&lt; endl;
+                      cout&lt;&lt; "Year: "&lt;&lt; year&lt;&lt; endl;
+                      fuelefficiency(); // Calculate fuel efficiency
+                      cout&lt;&lt; "Max speed: "&lt;&lt; maxspd&lt;&lt; endl;
+                      cout&lt;&lt; "Distance traveled: "&lt;&lt; totaldistance&lt;&lt; endl;
+                      cout&lt;&lt; "*************************************"&lt;&lt; endl;
+                  }
+              };
+              
+              class car : public vehicle {
+              public:
+                  void get() {
+                      cout&lt;&lt; "Enter material used in building of vehicle: ";
+                      cin >> make;
+                      cout&lt;&lt; "Enter model of the vehicle: ";
+                      cin >> model;
+                      cout&lt;&lt; "Enter year: ";
+                      cin >> year;
+                      cout&lt;&lt; "Enter fuel type: ";
+                      cin >> fueltype;
+                  }
+              
+                  void display() {
+                      cout&lt;&lt; "*************************************"&lt;&lt; endl;
+                      cout&lt;&lt; "Model: "&lt;&lt; model&lt;&lt; endl;
+                      cout&lt;&lt; "Material used: "&lt;&lt; make&lt;&lt; endl;
+                      cout&lt;&lt; "Fuel type: "&lt;&lt; fueltype&lt;&lt; endl;
+                      cout&lt;&lt; "Year: "&lt;&lt; year&lt;&lt; endl;
+                      fuelefficiency(); // Calculate fuel efficiency
+                      cout&lt;&lt; "Max speed: "&lt;&lt; maxspd&lt;&lt; endl;
+                      cout&lt;&lt; "Distance traveled: "&lt;&lt; totaldistance&lt;&lt; endl;
+                      cout&lt;&lt; "*************************************"&lt;&lt; endl;
+                  }
+              };
+              
+              class motorcycle : public vehicle {
+              public:
+                  void get() {
+                      cout&lt;&lt; "Enter material used in building of vehicle: ";
+                      cin >> make;
+                      cout&lt;&lt; "Enter model of the vehicle: ";
+                      cin >> model;
+                      cout&lt;&lt; "Enter year: ";
+                      cin >> year;
+                      cout&lt;&lt; "Enter fuel type: ";
+                      cin >> fueltype;
+                  }
+              
+                  void display() {
+                      cout&lt;&lt; "*************************************"&lt;&lt; endl;
+                      cout&lt;&lt; "Model: "&lt;&lt; model&lt;&lt; endl;
+                      cout&lt;&lt; "Material used: "&lt;&lt; make&lt;&lt; endl;
+                      cout&lt;&lt; "Fuel type: "&lt;&lt; fueltype&lt;&lt; endl;
+                      cout&lt;&lt; "Year: "&lt;&lt; year&lt;&lt; endl;
+                      fuelefficiency(); // Calculate fuel efficiency
+                      cout&lt;&lt; "Max speed: "&lt;&lt; maxspd&lt;&lt; endl;
+                      cout&lt;&lt; "Distance traveled: "&lt;&lt; totaldistance&lt;&lt; endl;
+                      cout&lt;&lt; "*************************************"&lt;&lt; endl;
+                  }
+              };
+              
+              int main() {
+                  truck t1;
+                  car c1;
+                  motorcycle m1;
+              
+                  cout&lt;&lt; "For truck:"&lt;&lt; endl;
+                  t1.get();
+                  t1.distancetravelled();
+                  t1.maxspeed();
+                  t1.display();
+              
+                  cout&lt;&lt; "For car:"&lt;&lt; endl;
+                  c1.get();
+                  c1.distancetravelled();
+                  c1.maxspeed();
+                  c1.display();
+              
+                  cout&lt;&lt; "For motorcycle:"&lt;&lt; endl;
+                  m1.get();
+                  m1.distancetravelled();
+                  m1.maxspeed();
+                  m1.display();
+              
+                  return 0;
+              }
+            </pre>
+        </div>
+    
+      <div class="code">
+        <div>
+          <h2 name="code10">10. Write a C++ program that creates a class hierarchy for employees of a company. The base class 
+            should be Employee, with derived classes Manager, Developer, and Programmer. Each derived class 
+            should have properties such as name, address, salary, and job title. Implement methods for 
+            calculating bonuses, generating performance reports, and managing projects.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+            #include&lt;iostream>
+    using namespace std;
+    class employee
+    {
+        public:
+            char name[50],address[50],title[20],projects[50],feedback[50];
+            float salary,per,sales,engagement,rating,bonuss;
+            void bonus()
+            {
+                cout&lt;&lt;"Enter bonus perecntage:";
+                cin>>per;
+                bonuss=(salary)*per/100;
+                salary=salary+bonuss;
+            }
+            void report()
+            {
+                cout&lt;&lt;"***************************"&lt;&lt;endl;
+                cout&lt;&lt;"Name:"&lt;&lt;name&lt;&lt;endl;
+                cout&lt;&lt;"Job title:"&lt;&lt;title&lt;&lt;endl;
+                cout&lt;&lt;"Projects:"&lt;&lt;projects&lt;&lt;endl;
+                cout&lt;&lt;"Salary:"&lt;&lt;salary&lt;&lt;endl;
+                cout&lt;&lt;"Sales:"&lt;&lt;sales&lt;&lt;endl;
+                cout&lt;&lt;"Engagements:"&lt;&lt;engagement&lt;&lt;endl;
+                cout&lt;&lt;"Rating:"&lt;&lt;rating&lt;&lt;endl;
+                cout&lt;&lt;"***************************"&lt;&lt;endl;
+            }
+            void project()
+            {
+                cout&lt;&lt;"Assign Project:";
+                cin>>projects;
+            }
+    };
+    class manager:public employee
+    {
+        public:
+            void get()
+            {
+                cout&lt;&lt;"Enter name:";
+                cin>>name;
+                cout&lt;&lt;"Address:";
+                cin>>address;
+                cout&lt;&lt;"Enter job title:";
+                cin>>title;
+                cout&lt;&lt;"Enter salary:";
+                cin>>salary;
+                cout&lt;&lt;"Sales:";
+                cin>>sales;
+                cout&lt;&lt;"Engagements:";
+                cin>>engagement;
+                cout&lt;&lt;"Ratings:";
+                cin>>rating;
+            }
+    };
+    class developer:public employee
+    {
+        public:
+            void get()
+            {
+                cout&lt;&lt;"Enter name:";
+                cin>>name;
+                cout&lt;&lt;"Address:";
+                cin>>address;
+                cout&lt;&lt;"Enter job title:";
+                cin>>title;
+                cout&lt;&lt;"Enter salary:";
+                cin>>salary;
+                cout&lt;&lt;"Sales:";
+                cin>>sales;
+                cout&lt;&lt;"Engagements:";
+                cin>>engagement;
+                cout&lt;&lt;"Ratings:";
+                cin>>rating;
+            }
+    };
+    class programmer:public employee
+    {
+        public:
+            void get()
+            {
+                cout&lt;&lt;"Enter name:";
+                cin>>name;
+                cout&lt;&lt;"Address:";
+                cin>>address;
+                cout&lt;&lt;"Enter job title:";
+                cin>>title;
+                cout&lt;&lt;"Enter salary:";
+                cin>>salary;
+                cout&lt;&lt;"Sales:";
+                cin>>sales;
+                cout&lt;&lt;"Engagements:";
+                cin>>engagement;
+                cout&lt;&lt;"Ratings:";
+                cin>>rating;
+            }
+    };
+    int main()
+    {
+        manager m1;
+        developer d1;
+        programmer p1;
+        cout&lt;&lt;"For manager :-"&lt;&lt;endl;
+        m1.get();
+        m1.bonus();
+        m1.project();
+        m1.report();
+        cout&lt;&lt;"For Programmer :-"&lt;&lt;endl;
+        p1.get();
+        p1.bonus();
+        p1.project();
+        p1.report();
+        cout&lt;&lt;"For Developer :-"&lt;&lt;endl;
+        d1.get();
+        d1.bonus();
+        d1.project();
+        d1.report();
+    }
+    
+          </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>
+            For manager :-
+Enter name:lakshay
+Address:indore
+Enter job title:branch_manager
+Enter salary:45000
+Sales:250000
+Engagements:300
+Ratings:4.3
+Enter bonus perecntage:11
+Assign Project:expansion_of_branch
+***************************
+Name:lakshay
+Job title:branch_manager
+Projects:expansion_of_branch
+Salary:49950
+Sales:250000
+Engagements:300
+Rating:4.3
+***************************
+For Programmer :-
+Enter name:harsh
+Address:dubai
+Enter job title:ios_developer
+Enter salary:65000
+Sales:500000
+Engagements:800
+Ratings:4.7
+Enter bonus perecntage:15
+Assign Project:make_a_software_for_traveling
+***************************
+Name:harsh
+Job title:ios_developer
+Projects:make_a_software_for_traveling
+Salary:74750
+Sales:500000
+Engagements:800
+Rating:4.7
+***************************
+For Developer :-
+Enter name:ayushi
+Address:dubai
+Enter job title:software_developer
+Enter salary:70000
+Sales:450000
+Engagements:600
+Ratings:4.6
+Enter bonus perecntage:7
+Assign Project:develop_company_app
+***************************
+Name:ayushi
+Job title:software_developer
+Projects:develop_company_app
+Salary:74900
+Sales:450000
+Engagements:600
+Rating:4.6
+***************************
+        </pre>
+        </div>
+      </div>`,
+      
+        "Object Oriented Programming": `<h1>Sorting</h1>    
+        <div class="code">
+  <div>
+    <h2 name="code1">1. Selection Sort</h2> 
+  </div>
+  <div>
+    <h2>Source Code</h2>
+    <pre>
+#include &lt;stdio.h&gt;
+#include &lt;time.h&gt;
+#define maxSize 100
+
+void selectionSort(int arr[], int size) {
+    int temp, min;
+    for (int i = 0; i &lt; size; i++) {
+        min = i;
+        for (int j = i + 1; j &lt; size; j++) {
+            if (arr[j] &lt; arr[min]) {
+                min = j;
+            }
+        }
+        temp = arr[i];
+        arr[i] = arr[min];
+        arr[min] = temp;
+    }
+}
+
+int main() {
+    int arr[maxSize];
+    int size;
+    clock_t start, end;
+    printf("ENTER SIZE OF ARRAY : ");
+    scanf("%d", &size);
+    for (int i = 0; i &lt; size; i++) {
+        printf("ENTER ARRAY ELEMENT : ");
+        scanf("%d", &arr[i]);
+    }
+    start = clock();
+    selectionSort(arr, size);
+    end = clock();
+    printf("SORTED ARRAY: ");
+    for (int i = 0; i &lt; size; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\nTIME TAKEN: %f seconds\n", (double)(end - start) / CLOCKS_PER_SEC);
+    return 0;
+}
+    </pre>
+  </div>
+</div>
+
+<div class="code">
+  <div>
+    <h2 name="code2">2. Bubble Sort</h2> 
+  </div>
+  <div>
+    <h2>Source Code</h2>
+    <pre>
+#include &lt;stdio.h&gt;
+
+void main() {
+    int a[100], n, i, j, temp;
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+    printf("Enter %d integers:\n", n);
+    for (i = 0; i &lt; n; i++) {
+        scanf("%d", &a[i]);
+    }
+    for (i = 0; i &lt; n - 1; i++) {
+        for (j = 0; j &lt; n - i - 1; j++) {
+            if (a[j] &gt; a[j + 1]) {
+                temp = a[j];
+                a[j] = a[j + 1];
+                a[j + 1] = temp;
+            }
+        }
+    }
+    printf("Sorted array:\n");
+    for (i = 0; i &lt; n; i++) {
+        printf("%d ", a[i]);
+    }
+}
+    </pre>
+  </div>
+</div>
+
+<div class="code">
+  <div>
+    <h2 name="code3">3. Insertion Sort</h2> 
+  </div>
+  <div>
+    <h2>Source Code</h2>
+    <pre>
+#include &lt;stdio.h&gt;
+
+void insertionSort(int arr[], int n) {
+    int key, j;
+    for (int i = 1; i &lt; n; i++) {
+        key = arr[i];
+        j = i - 1;
+        while (j &gt;= 0 &amp;&amp; arr[j] &gt; key) {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+        arr[j + 1] = key;
+    }
+}
+
+int main() {
+    int arr[100], n;
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+    printf("Enter %d integers:\n", n);
+    for (int i = 0; i &lt; n; i++) {
+        scanf("%d", &arr[i]);
+    }
+    insertionSort(arr, n);
+    printf("Sorted array:\n");
+    for (int i = 0; i &lt; n; i++) {
+        printf("%d ", arr[i]);
+    }
+    return 0;
+}
+    </pre>
+  </div>
+</div>
+
+<div class="code">
+  <div>
+    <h2 name="code4">4. Merge Sort</h2> 
+  </div>
+  <div>
+    <h2>Source Code</h2>
+    <pre>
+#include &lt;stdio.h&gt;
+
+void merge(int arr[], int left, int mid, int right) {
+    int i, j, k;
+    int n1 = mid - left + 1;
+    int n2 = right - mid;
+
+    int L[n1], R[n2];
+    for (i = 0; i &lt; n1; i++)
+        L[i] = arr[left + i];
+    for (j = 0; j &lt; n2; j++)
+        R[j] = arr[mid + 1 + j];
+
+    i = 0;
+    j = 0;
+    k = left;
+    while (i &lt; n1 &amp;&amp; j &lt; n2) {
+        if (L[i] &lt;= R[j]) {
+            arr[k] = L[i];
+            i++;
+        } else {
+            arr[k] = R[j];
+            j++;
+        }
+        k++;
+    }
+    while (i &lt; n1) {
+        arr[k] = L[i];
+        i++;
+        k++;
+    }
+    while (j &lt; n2) {
+        arr[k] = R[j];
+        j++;
+        k++;
+    }
+}
+
+void mergeSort(int arr[], int left, int right) {
+    if (left &lt; right) {
+        int mid = left + (right - left) / 2;
+        mergeSort(arr, left, mid);
+        mergeSort(arr, mid + 1, right);
+        merge(arr, left, mid, right);
+    }
+}
+
+int main() {
+    int arr[] = {38, 27, 43, 3, 9, 82, 10};
+    int arr_size = sizeof(arr) / sizeof(arr[0]);
+    mergeSort(arr, 0, arr_size - 1);
+    printf("Sorted array: \n");
+    for (int i = 0; i &lt; arr_size; i++)
+        printf("%d ", arr[i]);
+    return 0;
+}
+    </pre>
+  </div>
+</div>
+
+<div class="code">
+  <div>
+    <h2 name="code5">5. Quick Sort</h2> 
+  </div>
+  <div>
+    <h2>Source Code</h2>
+    <pre>
+#include &lt;stdio.h&gt;
+
+int partition(int arr[], int low, int high) {
+    int pivot = arr[high];
+    int i = (low - 1);
+    for (int j = low; j &lt; high; j++) {
+        if (arr[j] &lt;= pivot) {
+            i++;
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+        }
+    }
+    int temp = arr[i + 1];
+    arr[i + 1] = arr[high];
+    arr[high] = temp;
+    return (i + 1);
+}
+
+void quickSort(int arr[], int low, int high) {
+    if (low &lt; high) {
+        int pi = partition(arr, low, high);
+        quickSort(arr, low, pi - 1);
+        quickSort(arr, pi + 1, high);
+    }
+}
+
+int main() {
+    int arr[] = {10, 7, 8, 9, 1, 5};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    quickSort(arr, 0, n - 1);
+    printf("Sorted array: \n");
+    for (int i = 0; i &lt; n; i++)
+        printf("%d ", arr[i]);
+    return 0;
+}
+    </pre>
+  </div>
+</div>
+
+<div class="code">
+  <div>
+    <h2 name="code6">6. Binary Search</h2> 
+  </div>
+  <div>
+    <h2>Source Code</h2>
+    <pre>
+#include &lt;stdio.h&gt;
+
+int binarySearch(int arr[], int left, int right, int x) {
+    while (left &lt;= right) {
+        int mid = left + (right - left) / 2;
+
+        if (arr[mid] == x)
+            return mid;
+        if (arr[mid] &lt; x)
+            left = mid + 1;
+        else
+            right = mid - 1;
+    }
+    return -1;
+}
+
+int main() {
+    int arr[] = {2, 3, 4, 10, 40};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int x = 10;
+    int result = binarySearch(arr, 0, n - 1, x);
+    if (result == -1)
+        printf("Element not found\n");
+    else
+        printf("Element found at index: %d\n", result);
+    return 0;
+}
+    </pre>
+  </div>
+</div>
+
+<div class="code">
+  <div>
+    <h2 name="code7">7. Fibonacci Series</h2> 
+  </div>
+  <div>
+    <h2>Source Code</h2>
+    <pre>
+#include &lt;stdio.h&gt;
+
+void printFibonacci(int n) {
+    int a = 0, b = 1, next;
+    for (int i = 0; i &lt; n; i++) {
+        printf("%d ", a);
+        next = a + b;
+        a = b;
+        b = next;
+    }
+}
+
+int main() {
+    int n;
+    printf("Enter number of terms: ");
+    scanf("%d", &n);
+    printFibonacci(n);
+    return 0;
+}
+    </pre>
+  </div>
+</div>
+
+<div class="code">
+  <div>
+    <h2 name="code8">8. Factorial Calculation</h2> 
+  </div>
+  <div>
+    <h2>Source Code</h2>
+    <pre>
+#include &lt;stdio.h&gt;
+
+int factorial(int n) {
+    if (n == 0)
+        return 1;
+    return n * factorial(n - 1);
+}
+
+int main() {
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    printf("Factorial of %d is %d\n", n, factorial(n));
+    return 0;
+}
+    </pre>
+  </div>
+</div>
+
+<div class="code">
+  <div>
+    <h2 name="code9">9. Prime Number Check</h2> 
+  </div>
+  <div>
+    <h2>Source Code</h2>
+    <pre>
+#include &lt;stdio.h&gt;
+
+int isPrime(int n) {
+    if (n &lt;= 1) return 0;
+    for (int i = 2; i * i &lt;= n; i++) {
+        if (n % i == 0)
+            return 0;
+    }
+    return 1;
+}
+
+int main() {
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    if (isPrime(n))
+        printf("%d is a prime number.\n", n);
+    else
+        printf("%d is not a prime number.\n", n);
+    return 0;
+}
+    </pre>
+  </div>
+</div>
+
+<div class="code">
+  <div>
+    <h2 name="code10">10. Reverse a String</h2> 
+  </div>
+  <div>
+    <h2>Source Code</h2>
+    <pre>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+void reverse(char str[]) {
+    int n = strlen(str);
+    for (int i = 0; i &lt; n / 2; i++) {
+        char temp = str[i];
+        str[i] = str[n - i - 1];
+        str[n - i - 1] = temp;
+    }
+}
+
+int main() {
+    char str[100];
+    printf("Enter a string: ");
+    gets(str);
+    reverse(str);
+    printf("Reversed string: %s\n", str);
+    return 0;
+}
+    </pre>
+  </div>
+</div>
+`,
+        "Operator Overloading":`<h1>Stacks</h1>
+        <div class="code">
+    <div>
+        <h2 name="code1">1. Stack Operations on Integer Array</h2> 
+    </div>
+    <div>
+        <h2>Source Code</h2>
+        <pre>
+#include &lt;stdio.h&gt;
+#define size __INT16_MAX__
+
+void push(int *stack, int *top, int val) {
+    stack[++(*top)] = val;
+}
+int pop(int *stack, int *top) {
+    return stack[(*top)--];
+}
+int main() {
+    int stack[size], top = -1;
+    int choice, value;
+    do {
+        printf("1. Push\n2. Pop\n3. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+        switch (choice) {
+            case 1:
+                printf("Enter value to push: ");
+                scanf("%d", &value);
+                push(stack, &top, value);
+                break;
+            case 2:
+                if (top >= 0) {
+                    value = pop(stack, &top);
+                    printf("Popped value: %d\n", value);
+                } else {
+                    printf("Stack is empty!\n");
+                }
+                break;
+            case 3:
+                printf("Exiting...\n");
+                break;
+            default:
+                printf("Invalid choice!\n");
+        }
+    } while (choice != 3);
+    return 0;
+        </pre>
+    </div>
+</div>
+`,
+
+        "Strings": `<h1>Strings</h1>
+    <div class="code">
+        <div>
+          <h2 name="code1">1. Program to Check Anagram Explanation Two Strings are called the anagram if they contain the same characters. However, the order
+            or sequence of the characters can be different.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+            #include < iostream >
+#include < string.h >
+
+using namespace std;
+
+ Function to check if two strings are anagrams
+int areAnagrams(const char* str1, const char* str2) {
+     If the lengths of the strings are different, they cannot be anagrams
+    if (strlen(str1) != strlen(str2))
+        return 0;
+
+     Initialize an array to store character counts
+    const int CHAR_COUNT = 256;  Assuming ASCII characters
+    int charCount[CHAR_COUNT] = {0};
+
+    for (int i = 0; str1[i] != '\0'; i++)
+        charCount[str1[i]]++;
+
+    for (int i = 0; str2[i] != '\0'; i++)
+        charCount[str2[i]]--;
+
+     Check if all counts are zero
+    for (int i = 0; i < CHAR_COUNT; i++) {
+        if (charCount[i] != 0)
+            return 0;
+    }
+
+    return 1;
+}
+
+int main() {
+    char str1[100], str2[100];
+
+     Input two strings from the user
+    cout &lt;&lt; "Enter the first string: ";
+    cin >> str1;
+    cout &lt;&lt; "Enter the second string: ";
+    cin >> str2;
+
+     Check if the strings are anagrams
+    if (areAnagrams(str1, str2))
+        cout &lt;&lt; "The strings are anagrams." &lt;&lt; endl;
+    else
+        cout &lt;&lt; "The strings are not anagrams." &lt;&lt; endl;
+
+    return 0;
+}
+          </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>
+            output:-
+            Enter the first string: madam
+            Enter the second string: damam
+            The strings are anagrams.
+          </pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code2">2. Program to Swapping Pair of Characters Explanation -
+            Enter the string from user and enter the characters
+            that you want to swap with one another.
+            </h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+            #include< iostream >
+#include< string.h >
+using namespace std;
+int main()
+{
+char str[20];
+int ch1,ch2;
+cout&lt;&lt;"Enter string:";
+cin>>str;
+cout&lt;&lt;"Enter position of the characters you want to interchange:";
+cin>>ch1>>ch2;
+char temp;
+temp=str[ch1-1];
+str[ch1-1]=str[ch2-1];
+str[ch2-1]=temp;
+int len=strlen(str);
+cout&lt;&lt;"Interchanged String:";
+int i;
+for(i=0;i {
+cout< }
+}
+          </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>
+            output:-
+Enter string:queen
+Enter position of the characters you want to interchange:2
+
+3
+Interchanged String:qeuen
+          </pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code3">3. Program to Check if a String contains only digits?</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+            #include< iostream>ascii value 48 to 57
+            #include< string.h>
+            using namespace std;
+            int main()
+            {
+                char number[20];
+                cout&lt;&lt; "Enter number:";
+                cin>>number;
+                int ascii;
+                int count1=0;
+                int count=0;
+                int len=strlen(number);
+                for(int i=0;i< len;i++)
+                {
+                    ascii=number[i];
+                    if(ascii>47&&ascii< 58)
+                    {
+                        count1++;
+                    }
+                    else
+                    {
+                        count++;
+                        break;
+                    }
+                }
+                if(count1==len)
+                {
+                    cout&lt;&lt; "True";
+                }
+                else
+                {
+                    cout&lt;&lt; "False";
+                }
+            }
+            
+          </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>
+            output:-
+Enter number:6798990
+True
+................................
+output:-
+
+Enter number:v45x24
+False
+          </pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code4">4. Program to perform Deep Copy for String
+        </h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+            #include < iostream>
+#include < cstring>
+
+using namespace std;
+
+class MyString {
+private:
+    char *str;  Pointer to character array to hold the string
+    int length;  Length of the string
+
+public:
+     Constructor
+    MyString(const char *s = "") {
+        length = strlen(s);
+        str = new char[length + 1];
+        strcpy(str, s);
+    }
+
+     Destructor
+    ~MyString() {
+        delete[] str;
+    }
+
+     Deep copy constructor
+    MyString(const MyString &other) {
+        length = other.length;
+        str = new char[length + 1];
+        strcpy(str, other.str);
+    }
+
+     Method to display the string
+    void display() {
+        cout &lt;&lt; "String: " &lt;&lt; str &lt;&lt; endl;
+    }
+};
+
+int main() {
+    MyString str1("Hello");
+    MyString str2 = str1;  Deep copy performed
+
+    cout &lt;&lt; "Original String: ";
+    str1.display();
+    cout &lt;&lt; "Copied String: ";
+    str2.display();
+
+    return 0;
+}
+
+          </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>
+            output:-
+Original String: String: Hello
+Copied String: String: Hello
+          </pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code5">5. Program to remove all occurrences of a given character from input String? </h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+            #include< iostream>
+#include< string.h>
+using namespace std;
+int main()
+{
+	char str[20],ch;
+	cout&lt;&lt;"Input string:";
+	cin>>str;
+	cout&lt;&lt;"Input character to be removed:";
+	cin>>ch;
+	char *s=&str[0];
+	int len=strlen(str);
+	int j;
+	for (int i = j = 0; i < len; i++)
+    {
+	   if (s[i] != ch)
+        {
+		    s[j++]=s[i];
+		}
+	}
+	s[j]='\0';
+	len=strlen(s);
+	cout&lt;&lt;"Edited string:";
+	for(int i=0;i< len;i++)
+	{
+		cout&lt;&lt; str[i] ;
+	}
+}
+          </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>
+            output:-
+Input string:truee
+Input character to be removed:u
+Edited string:tree
+          </pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code6">6. .Program to Add Characters to a String</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+            #include< iostream>
+                #include< string.h>
+                using namespace std;
+                int main()
+                {
+                    char str[20],ch[20];
+                    int i,j=0,c=0;
+                    cout&lt;&lt;"Enter string:";
+                    cin>>str;
+                    cout&lt;&lt; "Enter char you want to add the string:";
+                    cin>>ch;
+                    while(str[j]!='\0')
+                    {
+                        c=c+1;
+                        j=j+1;
+                    }
+                    for(i=c,j=0;ch[j]!='\0';i++,j++)
+                        str[i]=ch[j];
+                    str[i+1]='\0';
+                    cout&lt;&lt;  "Appended string:" &lt;&lt; str;
+                }
+          </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>
+            output:-
+
+            Enter string:ho
+            Enter char you want to add the string:t
+            Appended string:hot
+          </pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code7">7.Program to check whether a string is a Palindrome.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+            #include < iostream>
+                #include < string.h>
+                using namespace std;
+                
+                 Function to check if a string is a palindrome
+                int isPalindrome(char str[]) {
+                    int length = strlen(str);
+                    int i, j;
+                
+                     Remove spaces and punctuation marks
+                    for (i = 0, j = 0; i < length; i++) {
+                        if (isalnum(str[i])) {
+                            str[j++] = tolower(str[i]);
+                        }
+                    }
+                    str[j] = '\0';  Null terminate the modified string
+                
+                     Check for palindrome
+                    for (i = 0, j = strlen(str) - 1; i < j; i++, j--) {
+                        if (str[i] != str[j]) {
+                            return 0;  Not a palindrome
+                        }
+                    }
+                    return 1;  Palindrome
+                }
+                
+          </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>
+            output:-
+Enter a string: madam
+"madam" is a palindrome.
+          </pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code8">8. Program to Convert Enum to String.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+            #include < iostream >
+#include < conio.h >
+using namespace std;
+
+ Enum definition
+enum Color { RED, GREEN, BLUE };
+
+ Function to convert enum to string
+const char* enumToString(Color color) {
+    const char* colorNames[] = { "RED", "GREEN", "BLUE" };
+    return colorNames[color];
+}
+
+int main() {
+    Color color = GREEN;
+    const char* colorStr = enumToString(color);
+    cout &lt;&lt; "Color as string: " &lt;&lt; colorStr &lt;&lt; endl;
+    return 0;
+}
+
+          </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>
+            output:-
+            Color as string: GREEN
+          </pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code9">9. Program to count number of words in a String.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+            #include < iostream>
+
+using namespace std;
+
+int main() {
+    char str[100];
+    int word_count = 0;
+    bool in_word = false;
+
+    cout &lt;&lt; "Enter a string: ";
+    gets(str);
+
+    for (int i = 0; str[i] != '\0'; ++i) {
+        if (str[i] == ' ' || str[i] == '\t' || str[i] == '\n') {
+            if (in_word) {
+                in_word = false;
+                ++word_count;
+            }
+        } else {
+            if (!in_word) {
+                in_word = true;
+            }
+        }
+    }
+
+    if (in_word) {
+        ++word_count;
+    }
+
+    cout &lt;&lt; "Total number of words: " &lt;&lt; word_count &lt;&lt; endl;
+
+    return 0;
+}
+
+          </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>
+            output:-
+Enter a string: this is my laptop
+Total number of words: 4
+          </pre>
+        </div>
+      </div>
+      <div class="code">
+        <div>
+          <h2 name="code10">10.  Program to count the total number of characters in a string.</h2>
+        </div>
+        <div>
+          <h2>source code</h2>
+          <pre>
+            #include< iostream><br>
+using namespace std;<br>
+int main()<br>
+{         <br>
+	char str[100];<br>
+	int char_count=0;<br>
+	
+	cout&lt;&lt;"Enter a string: ";<br>
+	gets(str);<br>
+	
+	for(int i=0;str[i]!='\0';++i)<br>
+	{
+		++char_count;<br>
+	}<br>
+	cout&lt;&lt;"Total number of character: ";<br>
+	cout&lt;&lt; char_count&lt;&lt; endl;<br>
+		return 0;<br>
+}
+          </pre>
+        </div>
+        <div>
+          <h2>output</h2>
+          <pre>
+            output:-
+Enter a string: Chetan Sir teaches us c++
+Total number of character: 25
+          </pre>
+        </div>
+      </div>`,
+      "Single Dimension Array":`<h1> Single Dimensional Array</h1>
+    <div class="code">
+    <div class="head">
+    <h2 name="code1">1. Program to copy all elements of one array into another</h2>
+      </div>
+      <div class="left">
+        <h2>source code</h2>
+        <pre>
+    #includei&lt;ostream&gt;
+        using namespace std;
+        int main()
+        {
+            int arr1[5],arr2[5];
+            cout&lt;&lt;"Enter a number:";
+            int i;
+            for(i=0;i&lt;5;i++)
+            {
+                cin&gt;&gt;arr1[i];
+            }
+            for(i=0;i&lt;5;i++)
+            {
+                arr2[i]=arr1[i];
+            }
+            cout&lt;&lt;"Array 2:";
+            for(i=0;i&lt;5;i++)
+            {
+                cout&lt;&lt;arr2[i]&lt;&lt;" ";
+            }
+            return 0;
+        }
+        
+            </pre
+        >
+      </div>
+      <div class="right">
+        <h2>output</h2>
+        <pre>
+ Enter a number:1 2 3 4 5
+        Array 2:1 2 3 4 5
+     </pre
+        >
+      </div>
+    </div>
+    <div class="code">
+      <div class="head" >
+      <h2 name="code2">2. Program to find the frequency of each element in the array</h2>
+      </div>
+      <div class="left">
+        <h2>source code</h2>
+        <pre>
+    #include&lt;iostream&gt;
+        using namespace std;
+        int main()
+        {
+            int arr[8],arr1[8];
+            cout&lt;&lt;"Enter value:";
+            int i;
+            for(i=0;i&lt;8;i++)
+            {
+                cin&gt;&gt;arr[i];
+            }
+            int j;
+            int count=0;
+            for(i=0;i&lt;8;i++)
+            {
+                count=0;
+                for(j=0;j&lt;8;j++)
+                {
+                    if(arr[i]==arr[j])
+                    {
+                        count++;
+                    }
+                }
+                arr1[i]=count;
+            }
+            cout&lt;&lt;"Output:";
+            for(i=0;i&lt;8;i++)
+            {
+                cout&lt;&lt;"Char:"&lt;&lt;arr[i]&lt;&lt;" Frequency:"&lt;&lt;arr1[i]&lt;&lt;endl;
+            }
+        }
+         </pre
+        >
+      </div>
+      <div class="rigth">
+        <h2>output</h2>
+        <pre>
+Enter value:1 2 3 2 4 3 1 5
+        Output:Char:1 Frequency:2
+        Char:2 Frequency:2
+        Char:3 Frequency:2
+        Char:2 Frequency:2
+        Char:4 Frequency:1
+        Char:3 Frequency:2
+        Char:1 Frequency:2
+        Char:5 Frequency:1
+        </pre>
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code3">3. Program to left rotate the elements of an array</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>
+    #include&lt;iostream&gt;
+    using namespace std;
+    int main()
+    {
+        int arr[5];
+        cout&lt;&lt;"Input values:";
+        int i;
+        for(i=0;i&lt;5;i++)
+        {
+            cin>>arr[i];
+        }
+        for(i=0;i&lt;5;i++)
+        {
+            arr[i]=arr[i+1];
+        }
+        arr[i]='\0';
+        cout&lt;&lt;"Output:";
+        for(i=0;i&lt;5;i++)
+        {
+            cout&lt;&lt;arr[i]&lt;&lt;" ";
+        }
+    }
+     </pre
+        >
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>
+ 
+        Input values:1 2 3 4 5
+        Output:2 3 4 5 0
+     </pre
+        >
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code4">4. Program to print the duplicate elements of an array</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>
+    #include&lt;iostream&gt;
+        using namespace std;
+        int main()
+        {
+            int a[10];
+            cout&lt;&lt;"Enter numbers:";
+            int i;
+            for(i=0;i&lt;10;i++)
+            {
+                cin>>a[i];
+            }
+            for(i=0;i&lt;10;i++)
+            {
+                for(int j=i+1;j&lt;10;j++)
+                {
+                    if(a[i]==a[j])
+                    {
+                        cout&lt;&lt;"Duplicate:"&lt;&lt;a[j]&lt;&lt;endl;
+                        break;
+                    }
+                }
+            }
+        }
+        
+     </pre
+        >
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>
+ 
+        Enter numbers:1 2 3 2 3 2 4 4 5 6
+        Duplicate:2
+        Duplicate:3
+        Duplicate:4
+     </pre
+        >
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code5">5. Program to print the elements of an array</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>
+    #include&lt;iostream&gt;
+        using namespace std;
+        int main()
+        {
+            int arr1[5];
+            cout&lt;&lt;"Enter a number:";
+            int i;
+            for(i=0;i&lt;5;i++)
+            {
+                cin>>arr1[i]; //inputing data
+            }
+            cout&lt;&lt;"Output:"&lt;&lt;endl;
+            for(i=0;i&lt;5;i++)
+            {
+                cout&lt;&lt;arr1[i]&lt;&lt;" ";
+            }
+        }
+        
+     </pre
+        >
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>
+ 
+        Enter a number:1 2 3 4 5
+        Output:
+        1 2 3 4 5
+     </pre
+        >
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code6">6. Program to print the elements of an array in reverse order</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>
+    #include&lt;iostream&gt;
+        using namespace std;
+        int main()
+        {
+            int arr[5];
+            cout&lt;&lt;"Enter number:";
+            int i;
+            for(i=0;i&lt;5;i++)
+            {
+                cin&gt;&gt;arr[i];
+            }
+            cout&lt;&lt;"Output:"&lt;&lt;endl;
+            for(i=4;i>=0;i--)
+            {
+                cout&lt;&lt;arr[i]&lt;&lt;" ";
+            }
+        }
+    </pre
+        >
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>
+ 
+        Enter a number:1 2 3 4 5
+        Output:
+        1 2 3 4 5
+     </pre
+        >
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code7">7. Program to print the elements of an array present on even position</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>
+    #include&lt;iostream&gt;
+        using namespace std;
+        int main()
+        {
+            int arr1[5];
+            cout&lt;&lt;"Enter a number:";
+            int i;
+            for(i=0;i&lt;5;i++)
+            {
+                cin&gt;&gt;arr1[i]; 
+            }
+            cout&lt;&lt;"Output:"&lt;&lt;endl;
+            for(i=0;i&lt;5;i=i+2)
+            {
+                cout&lt;&lt;arr1[i]&lt;&lt;" ";
+            }
+        }
+    </pre
+        >
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>
+ 
+        Enter a number:1 2 3 4 5
+        Output:
+        1 3 5
+     </pre
+        >
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code8">8. Program to print the elements of an array present on odd position</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>
+    #include&lt;iostream&gt;
+        using namespace std;
+        int main()
+        {
+            int arr1[5];
+            cout&lt;&lt;"Enter a number:";
+            int i;
+            for(i=0;i&lt;5;i++)
+            {
+                cin&gt;&gt;arr1[i]; 
+            }
+            cout&lt;&lt;"Output:"&lt;&lt;endl;
+            for(i=1;i&lt;5;i=i+2)
+            {
+                cout&lt;&lt;arr1[i]&lt;&lt;" ";
+            }
+        }
+        
+    </pre
+        >
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>
+ 
+        Enter a number:1 2 3 4 5
+        Output:
+        2 4
+     </pre
+        >
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code9">9. Program to print the largest element in an array</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>
+        #include&lt;iostream&gt;
+            using namespace std;
+            int main()
+            {
+                int arr[5];
+                cout&lt;&lt;"Input:";
+                int i;
+                for(i=0;i&lt;5;i++)
+                {
+                    cin&gt;&gt;arr[i];
+                }
+                int maxlength=arr[0];
+                for(i=0;i&lt;5;i++)
+                {
+                    if(maxlength&lt;arr[i])
+                    {
+                        maxlength=arr[i];
+                    }
+                }
+                cout&lt;&lt;"Largest element:"&lt;&lt;maxlength;
+            }
+             
+        </pre>
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>
+ 
+            Input:23 45 65 34 68
+            Largest element:68
+         </pre
+        >
+      </div>
+    </div>
+    <div class="code">
+      <div>
+        <h2 name="code10">10. Program to print the smallest element in an array</h2>
+      </div>
+      <div>
+        <h2>source code</h2>
+        <pre>
+            #include&lt;iostream&gt;
+                using namespace std;
+                int main()
+                {
+                    int arr[5];
+                    cout&lt;&lt;"Input:";
+                    int i;
+                    for(i=0;i&lt;5;i++)
+                    {
+                        cin&gt;&gt;arr[i];
+                    }
+                    int min=arr[0];
+                    for(i=0;i&lt;5;i++)
+                    {
+                        if(min&gt;arr[i])
+                        {
+                            min=arr[i];
+                        }
+                    }
+                    cout&lt;&lt;"Smallest element:"&lt;&lt;min;
+                }
+                
+            </pre
+        >
+      </div>
+      <div>
+        <h2>output</h2>
+        <pre>
+ 
+                Input:2 23 45 1 234
+                Smallest element:1
+             </pre
+        >
+      </div>
+    </div>`,
+        "Virtual Functions": `<h1 style="text-align: center;">Trees</h1>
+   <div class="code">
+    <div>
+        <h2 name="code1">1. Construct Binary Tree from Preorder and Inorder Traversal</h2> 
+    </div>
+    <div>
+        <h2>Source Code</h2>
+        <pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#define maxSize 100
+
+// Define a binary tree node
+struct Node {
+    int data;
+    struct Node *left;
+    struct Node *right;
+};
+
+// Function to create a new node
+struct Node *newNode(int data) {
+    struct Node *node = (struct Node *)malloc(sizeof(struct Node));
+    node->data = data;
+    node->left = node->right = NULL;
+    return node;
+}
+
+// Function to search for a value in an array
+int search(int arr[], int start, int end, int value) {
+    for (int i = start; i <= end; i++) {
+        if (arr[i] == value)
+            return i;
+    }
+    return -1;
+}
+
+// Recursive function to construct binary tree from preorder and inorder traversals
+struct Node *buildTree(int inorder[], int preorder[], int inStart, int inEnd, int *preIndex) {
+    if (inStart > inEnd)
+        return NULL;
+
+    int current = preorder[*preIndex];
+    (*preIndex)++;
+    struct Node *node = newNode(current);
+
+    if (inStart == inEnd)
+        return node;
+
+    int inIndex = search(inorder, inStart, inEnd, current);
+
+    node->left = buildTree(inorder, preorder, inStart, inIndex - 1, preIndex);
+    node->right = buildTree(inorder, preorder, inIndex + 1, inEnd, preIndex);
+
+    return node;
+}
+
+// Function to print the inorder traversal of the tree for verification
+void printInorder(struct Node *node) {
+    if (node == NULL)
+        return;
+    printInorder(node->left);
+    printf("%d ", node->data);
+    printInorder(node->right);
+}
+
+int main() {
+    int inorder[maxSize];
+    int preorder[maxSize];
+    int size;
+    printf("Enter the number of nodes: ");
+    scanf("%d", &size);
+    for (int i = 0; i < size; i++) {
+        printf("Enter inorder element: ");
+        scanf("%d", &inorder[i]);
+    }
+    for (int i = 0; i < size; i++) {
+        printf("Enter preorder element: ");
+        scanf("%d", &preorder[i]);
+    }
+    int preIndex = 0;
+
+    struct Node *root = buildTree(inorder, preorder, 0, size - 1, &preIndex);
+
+    printf("Inorder traversal of the constructed tree:\n");
+    printInorder(root);
+
+    return 0;
+}
+        </pre>
+    </div>
+</div>
+
+<div class="code">
+    <div>
+        <h2 name="code2">2. Binary Tree Level Order Traversal</h2> 
+    </div>
+    <div>
+        <h2>Source Code</h2>
+        <pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+// Structure for a binary tree node
+struct Node {
+    int data;
+    struct Node *left;
+    struct Node *right;
+};
+
+// Function to create a new node
+struct Node *newNode(int data) {
+    struct Node *node = (struct Node *)malloc(sizeof(struct Node));
+    node->data = data;
+    node->left = node->right = NULL;
+    return node;
+}
+
+// Function to insert a new node in the binary tree
+struct Node *insert(struct Node *root, int data) {
+    if (root == NULL) {
+        return newNode(data);
+    }
+
+    if (data < root->data) {
+        root->left = insert(root->left, data);
+    } else {
+        root->right = insert(root->right, data);
+    }
+
+    return root;
+}
+
+// Function to perform level order traversal
+void levelOrderTraversal(struct Node *root) {
+    if (root == NULL) {
+        printf("Tree is empty.\n");
+        return;
+    }
+
+    struct Node *queue[100]; // Simple queue for level order traversal
+    int front = 0, rear = 0;
+
+    queue[rear++] = root;
+
+    while (front < rear) {
+        struct Node *current = queue[front++];
+        printf("%d ", current->data);
+
+        if (current->left != NULL) {
+            queue[rear++] = current->left;
+        }
+        if (current->right != NULL) {
+            queue[rear++] = current->right;
+        }
+    }
+    printf("\n");
+}
+
+// Menu-driven program to interact with the user
+int main() {
+    struct Node *root = NULL;
+    int choice, value;
+
+    while (1) {
+        printf("\nMenu:\n");
+        printf("1. Insert a node\n");
+        printf("2. Level Order Traversal\n");
+        printf("3. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+        case 1:
+            printf("Enter value to insert: ");
+            scanf("%d", &value);
+            root = insert(root, value);
+            printf("Inserted %d into the binary tree.\n", value);
+            break;
+        case 2:
+            printf("Level Order Traversal:\n");
+            levelOrderTraversal(root);
+            break;
+        case 3:
+            printf("Exiting...\n");
+            exit(0);
+        default:
+            printf("Invalid choice! Please try again.\n");
+        }
+    }
+    return 0;
+}
+        </pre>
+    </div>
+</div>
+
+<div class="code">
+    <div>
+        <h2 name="code3">3. Print Left View of Binary Tree</h2> 
+    </div>
+    <div>
+        <h2>Source Code</h2>
+        <pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+// Structure for a binary tree node
+struct Node {
+    int data;
+    struct Node *left;
+    struct Node *right;
+};
+
+// Function to create a new node
+struct Node *newNode(int data) {
+    struct Node *node = (struct Node *)malloc(sizeof(struct Node));
+    node->data = data;
+    node->left = node->right = NULL;
+    return node;
+}
+
+// Function to insert a new node in the binary tree
+struct Node *insert(struct Node *root, int data) {
+    if (root == NULL) {
+        return newNode(data);
+    }
+
+    if (data < root->data) {
+        root->left = insert(root->left, data);
+    } else {
+        root->right = insert(root->right, data);
+    }
+
+    return root;
+}
+
+// Function to print the left view of the binary tree
+void leftViewUtil(struct Node *root, int level, int *maxLevel) {
+    if (root == NULL)
+        return;
+
+    if (*maxLevel < level) {
+        printf("%d ", root->data);
+        *maxLevel = level;
+    }
+
+    leftViewUtil(root->left, level + 1, maxLevel);
+    leftViewUtil(root->right, level + 1, maxLevel);
+}
+
+// Wrapper function to initiate left view printing
+void leftView(struct Node *root) {
+    int maxLevel = 0;
+    leftViewUtil(root, 1, &maxLevel);
+}
+
+// Menu-driven program to interact with the user
+int main() {
+    struct Node *root = NULL;
+    int choice, value;
+
+    while (1) {
+        printf("\nMenu:\n");
+        printf("1. Insert a node\n");
+        printf("2. Print Left View of Binary Tree\n");
+        printf("3. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+        case 1:
+            printf("Enter value to insert: ");
+            scanf("%d", &value);
+            root = insert(root, value);
+            printf("Inserted %d into the binary tree.\n", value);
+            break;
+        case 2:
+            printf("Left View of the Binary Tree:\n");
+            leftView(root);
+            printf("\n");
+            break;
+        case 3:
+            printf("Exiting...\n");
+            exit(0);
+        default:
+            printf("Invalid choice! Please try again.\n");
+        }
+    }
+    return 0;
+}
+        </pre>
+    </div>
+</div>
+
+<div class="code">
+    <div>
+        <h2 name="code4">4. Display the Right View of Binary Tree</h2> 
+    </div>
+    <div>
+        <h2>Source Code</h2>
+        <pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+// Structure for a binary tree node
+struct Node {
+    int data;
+    struct Node *left;
+    struct Node *right;
+};
+
+// Function to create a new node
+struct Node *newNode(int data) {
+    struct Node *node = (struct Node *)malloc(sizeof(struct Node));
+    node->data = data;
+    node->left = node->right = NULL;
+    return node;
+}
+
+// Function to insert a new node in the binary tree
+struct Node *insert(struct Node *root, int data) {
+    if (root == NULL) {
+        return newNode(data);
+    }
+
+    if (data < root->data) {
+        root->left = insert(root->left, data);
+    } else {
+        root->right = insert(root->right, data);
+    }
+
+    return root;
+}
+
+// Function to print the right view of the binary tree
+void rightViewUtil(struct Node *root, int level, int *maxLevel) {
+    if (root == NULL)
+        return;
+
+    if (*maxLevel < level) {
+        printf("%d ", root->data);
+        *maxLevel = level;
+    }
+
+    rightViewUtil(root->right, level + 1, maxLevel);
+    rightViewUtil(root->left, level + 1, maxLevel);
+}
+
+// Wrapper function to initiate right view printing
+void rightView(struct Node *root) {
+    int maxLevel = 0;
+    rightViewUtil(root, 1, &maxLevel);
+}
+
+// Menu-driven program to interact with the user
+int main() {
+    struct Node *root = NULL;
+    int choice, value;
+
+    while (1) {
+        printf("\nMenu:\n");
+        printf("1. Insert a node\n");
+        printf("2. Print Right View of Binary Tree\n");
+        printf("3. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+        case 1:
+            printf("Enter value to insert: ");
+            scanf("%d", &value);
+            root = insert(root, value);
+            printf("Inserted %d into the binary tree.\n", value);
+            break;
+        case 2:
+            printf("Right View of the Binary Tree:\n");
+            rightView(root);
+            printf("\n");
+            break;
+        case 3:
+            printf("Exiting...\n");
+            exit(0);
+        default:
+            printf("Invalid choice! Please try again.\n");
+        }
+    }
+    return 0;
+}
+        </pre>
+    </div>
+</div>
+`
+    };
+
+    var content = contentMap[topic];
+    document.getElementById('content').innerHTML = content;
+  }
+</script>
+
+</body>
+</html>
